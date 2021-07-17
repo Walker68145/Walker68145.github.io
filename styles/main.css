@@ -2180,15 +2180,15 @@ p > code {
     }.box-shadow-wrapper {
       box-shadow: none !important;
     }body {
-      cursor: url('/media/curs/default_normal.cur'), default;
+      cursor: url('/media/curs/snow_normal.cur'), default;
     }a {
-      cursor: url('/media/curs/default_link.cur'), pointer !important;
+      cursor: url('/media/curs/snow_pointer.cur'), pointer !important;
     }input, textarea, code {
-      cursor: url('/media/curs/default_texto.cur'), text !important;
+      cursor: url('/media/curs/snow_text.cur'), text !important;
     }code > span.copy-code {
-      cursor: url('/media/curs/default_link.cur'), text !important;
+      cursor: url('/media/curs/snow_pointer.cur'), text !important;
     }.post img {
-      cursor: url('/media/curs/default_zoomout.cur'), zoom-in !important;
+      cursor: url('/media/curs/snow_all-scroll.cur'), zoom-in !important;
     }.post img {
-      cursor: url('/media/curs/default_zoomout.cur'), zoom-out !important;
+      cursor: url('/media/curs/snow_crosshair.cur'), zoom-out !important;
     }
