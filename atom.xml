@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-07-17T12:41:10.826Z</updated>
+    <updated>2021-07-17T12:43:52.288Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="https://Walker68145.github.io"/>
+    <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
     <subtitle>qvq</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>https://Walker68145.github.io/images/avatar.png</logo>
+    <icon>https://Walker68145.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Arahc&apos;s blog</rights>
     <entry>
         <title type="html"><![CDATA[从积性函数到莫比乌斯反演]]></title>
-        <id>http://localhost:4000/post/qian-tan-shu-lun/</id>
-        <link href="http://localhost:4000/post/qian-tan-shu-lun/">
+        <id>https://Walker68145.github.io/post/qian-tan-shu-lun/</id>
+        <link href="https://Walker68145.github.io/post/qian-tan-shu-lun/">
         </link>
         <updated>2021-07-17T03:24:40.000Z</updated>
         <content type="html"><![CDATA[<p>今天学长给我们教了数论选讲，把里面的精髓提出来浅谈记录一下。</p>
@@ -103,24 +103,24 @@ s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
 s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的做法过于暴力而不可取。</p>
 <p>类比线性筛素数的做法，运用性质，可以得出如下的代码：</p>
 <pre><code class="language-cpp">inline void GetPhi(int n){ // 求 [1,n] 的欧拉函数，顺便筛素数
-	memset(isPrime, 1, sizeof(isPrime));
+    memset(isPrime, 1, sizeof(isPrime));
     // isPrime 是 bool，所以可以直接用 1 memset
-	isPrime[1] = 0, phi[1] = 1;//1不是素数，phi(1)=1
-	for(register int i = 2; i &lt;= n; ++i){
-		if(isPrime[i]){// 是质数
-			Prime[++cnt] = i, // prime 统计质数，cnt 为质数个数
-			phi[i] = i - 1;
+    isPrime[1] = 0, phi[1] = 1;//1不是素数，phi(1)=1
+    for(register int i = 2; i &lt;= n; ++i){
+        if(isPrime[i]){// 是质数
+            Prime[++cnt] = i, // prime 统计质数，cnt 为质数个数
+            phi[i] = i - 1;
         }
-		for(register int j = 1; j &lt;= cnt &amp;&amp; i * Prime[j] &lt;= n; ++j){
+        for(register int j = 1; j &lt;= cnt &amp;&amp; i * Prime[j] &lt;= n; ++j){
             // i*Prime[j] 不必超上限 n
-			isPrime[ i * Prime[j] ] = 0;
-			if(i % Prime[j] == 0){ // i中也含有Prime[j]这个因子
-				phi[ i * Prime[j] ] = phi[i] * Prime[j]; 
+            isPrime[ i * Prime[j] ] = 0;
+            if(i % Prime[j] == 0){ // i中也含有Prime[j]这个因子
+                phi[ i * Prime[j] ] = phi[i] * Prime[j]; 
                 break; 
             }
             else phi[ i * Prime[j] ] = phi[i] * (Prime[j] - 1);
-		}
-	}
+        }
+    }
 }
 </code></pre>
 <h2 id="莫比乌斯函数选讲">莫比乌斯函数选讲</h2>
@@ -153,24 +153,24 @@ s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
 s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的。重点来看多个数的情况。</p>
 <p>发现莫比乌斯函数的线性递推依然可以建设在线性筛的基础上。所以有如下代码：</p>
 <pre><code class="language-cpp">void GetMu(int n){ // 求 [1,n] 的莫比乌斯函数，顺便筛素数
-	memset(isPrime, 1, sizeof(isPrime));
+    memset(isPrime, 1, sizeof(isPrime));
     // isPrime 是 bool，所以可以直接用 1 memset
-	isPrime[1] = 0, Mu[1] = 1;//1不是素数，mu(1)=1
-	for(register int i = 2; i &lt;= n; ++i){
-		if(isPrime[i]){// 是质数
-			Prime[++cnt] = i, // prime 统计质数，cnt 为质数个数
-			phi[i] = -1;
+    isPrime[1] = 0, Mu[1] = 1;//1不是素数，mu(1)=1
+    for(register int i = 2; i &lt;= n; ++i){
+        if(isPrime[i]){// 是质数
+            Prime[++cnt] = i, // prime 统计质数，cnt 为质数个数
+            phi[i] = -1;
         }
-		for(register int j = 1; j &lt;= cnt &amp;&amp; i * Prime[j] &lt;= n; ++j){
+        for(register int j = 1; j &lt;= cnt &amp;&amp; i * Prime[j] &lt;= n; ++j){
             // i*Prime[j] 不必超上限 n
-			isPrime[ i * Prime[j] ] = 0;
-			if(i % Prime[j] == 0){ // i中也含有Prime[j]这个因子
-				mu[i] = 0;
+            isPrime[ i * Prime[j] ] = 0;
+            if(i % Prime[j] == 0){ // i中也含有Prime[j]这个因子
+                mu[i] = 0;
                 break; 
             }
             else mu[ i * Prime[j] ] = mu[i] * (-1);
-		}
-	}
+        }
+    }
 }
 </code></pre>
 <h2 id="狄利克雷卷积与莫比乌斯反演">狄利克雷卷积与莫比乌斯反演</h2>
@@ -217,8 +217,8 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
     </entry>
     <entry>
         <title type="html"><![CDATA[Shape 题解]]></title>
-        <id>http://localhost:4000/post/shape-ti-jie/</id>
-        <link href="http://localhost:4000/post/shape-ti-jie/">
+        <id>https://Walker68145.github.io/post/shape-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/shape-ti-jie/">
         </link>
         <updated>2021-07-12T05:10:36.000Z</updated>
         <content type="html"><![CDATA[<h2 id="题意简述">题意简述</h2>
@@ -296,8 +296,8 @@ for(register int i=1;i&lt;=n;++i)
     </entry>
     <entry>
         <title type="html"><![CDATA[从二叉搜索树到 Splay]]></title>
-        <id>http://localhost:4000/post/cong-er-cha-sou-suo-shu-dao-splay/</id>
-        <link href="http://localhost:4000/post/cong-er-cha-sou-suo-shu-dao-splay/">
+        <id>https://Walker68145.github.io/post/cong-er-cha-sou-suo-shu-dao-splay/</id>
+        <link href="https://Walker68145.github.io/post/cong-er-cha-sou-suo-shu-dao-splay/">
         </link>
         <updated>2021-07-11T05:10:08.000Z</updated>
         <content type="html"><![CDATA[<h2 id="从堆到二叉搜索树">从堆到二叉搜索树</h2>
@@ -652,8 +652,8 @@ inline int bigger(int x){ // 查找 x 的后继
     </entry>
     <entry>
         <title type="html"><![CDATA[管道迷宫 题解]]></title>
-        <id>http://localhost:4000/post/guan-dao-mi-gong-ti-jie/</id>
-        <link href="http://localhost:4000/post/guan-dao-mi-gong-ti-jie/">
+        <id>https://Walker68145.github.io/post/guan-dao-mi-gong-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/guan-dao-mi-gong-ti-jie/">
         </link>
         <updated>2021-07-03T02:57:40.000Z</updated>
         <content type="html"><![CDATA[<p><strong><a href="https://www.luogu.com.cn/problem/T183788">题目传送门</a></strong></p>
@@ -971,8 +971,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[大师 题解]]></title>
-        <id>http://localhost:4000/post/da-shi-ti-jie/</id>
-        <link href="http://localhost:4000/post/da-shi-ti-jie/">
+        <id>https://Walker68145.github.io/post/da-shi-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/da-shi-ti-jie/">
         </link>
         <updated>2020-08-26T02:57:04.000Z</updated>
         <content type="html"><![CDATA[<p><strong><a href="https://www.luogu.com.cn/problem/P4933">题目传送门</a></strong></p>
@@ -1115,8 +1115,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[贴海报 题解]]></title>
-        <id>http://localhost:4000/post/tie-hai-bao-ti-jie/</id>
-        <link href="http://localhost:4000/post/tie-hai-bao-ti-jie/">
+        <id>https://Walker68145.github.io/post/tie-hai-bao-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/tie-hai-bao-ti-jie/">
         </link>
         <updated>2020-02-06T02:55:36.000Z</updated>
         <content type="html"><![CDATA[<p><strong><a href="https://www.luogu.com.cn/problem/P3740">题目传送门</a></strong></p>
@@ -1271,8 +1271,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[ぶんたん 题解]]></title>
-        <id>http://localhost:4000/post/buntan-ti-jie/</id>
-        <link href="http://localhost:4000/post/buntan-ti-jie/">
+        <id>https://Walker68145.github.io/post/buntan-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/buntan-ti-jie/">
         </link>
         <updated>2020-01-15T02:53:46.000Z</updated>
         <content type="html"><![CDATA[<p>** <a href="https://www.luogu.com.cn/problem/AT269">题目传送门</a>**</p>
@@ -1399,8 +1399,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[花生采摘 题解]]></title>
-        <id>http://localhost:4000/post/hua-sheng-cai-zhai-ti-jie/</id>
-        <link href="http://localhost:4000/post/hua-sheng-cai-zhai-ti-jie/">
+        <id>https://Walker68145.github.io/post/hua-sheng-cai-zhai-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/hua-sheng-cai-zhai-ti-jie/">
         </link>
         <updated>2020-01-11T02:52:28.000Z</updated>
         <content type="html"><![CDATA[<p><strong><a href="https://www.luogu.com.cn/problem/P1086">题目传送门</a></strong></p>
@@ -1557,8 +1557,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[BITMAP-Bitmap 题解]]></title>
-        <id>http://localhost:4000/post/bitmap-bitmap-ti-jie/</id>
-        <link href="http://localhost:4000/post/bitmap-bitmap-ti-jie/">
+        <id>https://Walker68145.github.io/post/bitmap-bitmap-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/bitmap-bitmap-ti-jie/">
         </link>
         <updated>2019-08-27T02:50:21.000Z</updated>
         <content type="html"><![CDATA[<p><s>最近总喜欢在SPOJ上刷黑白双煞题</s></p>
@@ -1739,8 +1739,8 @@ int main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[最大子段和 题解]]></title>
-        <id>http://localhost:4000/post/zui-da-zi-duan-he-ti-jie/</id>
-        <link href="http://localhost:4000/post/zui-da-zi-duan-he-ti-jie/">
+        <id>https://Walker68145.github.io/post/zui-da-zi-duan-he-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/zui-da-zi-duan-he-ti-jie/">
         </link>
         <updated>2019-08-20T02:48:05.000Z</updated>
         <content type="html"><![CDATA[<p><s>又来水题解了</s></p>

@@ -9,7 +9,7 @@
 <meta name="description" content="qvq">
 <meta name="theme-color" content="#000">
 <title>数字三角形 题解 | Arahc&#39;s blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1626525666556">
+<link rel="shortcut icon" href="/favicon.ico?v=1626525826036">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1814,24 +1814,24 @@ s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
 s-65,47,-65,47z M834 80H400000v40H845z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.23972em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 的做法过于暴力而不可取。&lt;/p&gt;
 &lt;p&gt;类比线性筛素数的做法，运用性质，可以得出如下的代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;inline void GetPhi(int n){ // 求 [1,n] 的欧拉函数，顺便筛素数
-	memset(isPrime, 1, sizeof(isPrime));
+    memset(isPrime, 1, sizeof(isPrime));
     // isPrime 是 bool，所以可以直接用 1 memset
-	isPrime[1] = 0, phi[1] = 1;//1不是素数，phi(1)=1
-	for(register int i = 2; i &amp;lt;= n; ++i){
-		if(isPrime[i]){// 是质数
-			Prime[++cnt] = i, // prime 统计质数，cnt 为质数个数
-			phi[i] = i - 1;
+    isPrime[1] = 0, phi[1] = 1;//1不是素数，phi(1)=1
+    for(register int i = 2; i &amp;lt;= n; ++i){
+        if(isPrime[i]){// 是质数
+            Prime[++cnt] = i, // prime 统计质数，cnt 为质数个数
+            phi[i] = i - 1;
         }
-		for(register int j = 1; j &amp;lt;= cnt &amp;amp;&amp;amp; i * Prime[j] &amp;lt;= n; ++j){
+        for(register int j = 1; j &amp;lt;= cnt &amp;amp;&amp;amp; i * Prime[j] &amp;lt;= n; ++j){
             // i*Prime[j] 不必超上限 n
-			isPrime[ i * Prime[j] ] = 0;
-			if(i % Prime[j] == 0){ // i中也含有Prime[j]这个因子
-				phi[ i * Prime[j] ] = phi[i] * Prime[j]; 
+            isPrime[ i * Prime[j] ] = 0;
+            if(i % Prime[j] == 0){ // i中也含有Prime[j]这个因子
+                phi[ i * Prime[j] ] = phi[i] * Prime[j]; 
                 break; 
             }
             else phi[ i * Prime[j] ] = phi[i] * (Prime[j] - 1);
-		}
-	}
+        }
+    }
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;莫比乌斯函数选讲&#34;&gt;莫比乌斯函数选讲&lt;/h2&gt;
@@ -1864,24 +1864,24 @@ s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
 s-65,47,-65,47z M834 80H400000v40H845z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.23972em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 的。重点来看多个数的情况。&lt;/p&gt;
 &lt;p&gt;发现莫比乌斯函数的线性递推依然可以建设在线性筛的基础上。所以有如下代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;void GetMu(int n){ // 求 [1,n] 的莫比乌斯函数，顺便筛素数
-	memset(isPrime, 1, sizeof(isPrime));
+    memset(isPrime, 1, sizeof(isPrime));
     // isPrime 是 bool，所以可以直接用 1 memset
-	isPrime[1] = 0, Mu[1] = 1;//1不是素数，mu(1)=1
-	for(register int i = 2; i &amp;lt;= n; ++i){
-		if(isPrime[i]){// 是质数
-			Prime[++cnt] = i, // prime 统计质数，cnt 为质数个数
-			phi[i] = -1;
+    isPrime[1] = 0, Mu[1] = 1;//1不是素数，mu(1)=1
+    for(register int i = 2; i &amp;lt;= n; ++i){
+        if(isPrime[i]){// 是质数
+            Prime[++cnt] = i, // prime 统计质数，cnt 为质数个数
+            phi[i] = -1;
         }
-		for(register int j = 1; j &amp;lt;= cnt &amp;amp;&amp;amp; i * Prime[j] &amp;lt;= n; ++j){
+        for(register int j = 1; j &amp;lt;= cnt &amp;amp;&amp;amp; i * Prime[j] &amp;lt;= n; ++j){
             // i*Prime[j] 不必超上限 n
-			isPrime[ i * Prime[j] ] = 0;
-			if(i % Prime[j] == 0){ // i中也含有Prime[j]这个因子
-				mu[i] = 0;
+            isPrime[ i * Prime[j] ] = 0;
+            if(i % Prime[j] == 0){ // i中也含有Prime[j]这个因子
+                mu[i] = 0;
                 break; 
             }
             else mu[ i * Prime[j] ] = mu[i] * (-1);
-		}
-	}
+        }
+    }
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;狄利克雷卷积与莫比乌斯反演&#34;&gt;狄利克雷卷积与莫比乌斯反演&lt;/h2&gt;
