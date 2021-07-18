@@ -9,7 +9,7 @@
 <meta name="description" content="qvq">
 <meta name="theme-color" content="#000">
 <title>Arahc&#39;s blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1626586385782">
+<link rel="shortcut icon" href="/favicon.ico?v=1626586659680">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1369,6 +1369,7 @@ s-65,47,-65,47z M834 80H400000v40H845z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/sp
             // i*Prime[j] 不必超上限 n
             isPrime[ i * Prime[j] ] = 0;
             if(i % Prime[j] == 0){ // i中也含有Prime[j]这个因子
+                mu[i*prime[j]]=0;
                 break;  // 这里不要更新 mu 值！！
             }
             else mu[ i * Prime[j] ] = mu[i] * (-1);
