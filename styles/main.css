@@ -2140,26 +2140,26 @@ p > code {
       color: #adb5bd;
       border-bottom-color: #adb5bd;
     }.markdownIt-TOC a:hover {
-      color: #339af0;
-      border-bottom-color: #339af0;
+      color: #fa5252;
+      border-bottom-color: #fa5252;
     }.active-current > a {
-      color: #748ffc !important;
-      border-bottom-color: #748ffc !important;
+      color: #f08c00 !important;
+      border-bottom-color: #f08c00 !important;
     }
     .sidebar-title-active {
-      color: #748ffc;
-      border-bottom-color: #748ffc;
+      color: #f08c00;
+      border-bottom-color: #f08c00;
     }
     .sidebar-title-item:hover {
-      color: #748ffc !important;
+      color: #f08c00 !important;
     }
     .active-show > a {
-      color: #748ffc;
-      border-bottom-color: #748ffc;
+      color: #f08c00;
+      border-bottom-color: #f08c00;
     }
     .active-hidden > a {
-      color: #748ffc;
-      border-bottom-color: #748ffc;
+      color: #f08c00;
+      border-bottom-color: #f08c00;
     }.bg-color {
       background-color: #ffffffbf;
     }
