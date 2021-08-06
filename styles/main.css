@@ -2076,26 +2076,26 @@ p > code {
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
       background: #eeeeeebf;
     }h1, h2, h3, h4, h5, h6 {
-      color: #555;
+      color: #1f1e33;
     }
     
     .archive-timeline-title::before {
-      background-color: #555;
+      background-color: #1f1e33;
     }
     
     .post-title-link::before {
-      background-color: #555;
+      background-color: #1f1e33;
     }
     
     .node-title::before {
-      background-color: #555;
+      background-color: #1f1e33;
     }a {
-      color: #555;
+      color: #1f1e33;
     }
     
     .next-md-body a, .friends-box a  {
-      color: #555;
-      border-bottom: 1px solid #555;
+      color: #1f1e33;
+      border-bottom: 1px solid #1f1e33;
     }a:hover {
       color: #222;
     }
