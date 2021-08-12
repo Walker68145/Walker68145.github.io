@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-08-10T14:26:37.031Z</updated>
+    <updated>2021-08-12T06:04:49.651Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Walker68145.github.io"/>
     <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
@@ -10,6 +10,493 @@
     <logo>https://Walker68145.github.io/images/avatar.png</logo>
     <icon>https://Walker68145.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Arahc&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[全真模1部分题解及总结]]></title>
+        <id>https://Walker68145.github.io/post/quan-zhen-mo-1-bu-fen-ti-jie-ji-zong-jie/</id>
+        <link href="https://Walker68145.github.io/post/quan-zhen-mo-1-bu-fen-ti-jie-ji-zong-jie/">
+        </link>
+        <updated>2021-08-12T01:33:24.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="考试策略">考试策略：</h2>
+<p>比较不行，前面花了太多时间在 T1 上，实际上最后个人感觉 T1 最难。T2 类似于一个猜结果后证明的东西，考虑到数据范围，必然网络流二分图动态规划三选一。因为个人动态规划水平不太好，优先考虑网络流做法没想出来，又因为想到网格图一定是二分图，所以尝试用二分图的角度解释必胜方式，从而证明正确性。T3 因为以前同学讲点分治的时候提到过：</p>
+<blockquote>
+<p>点分治可以用来处理树上路径长度有关的奇特问题，包括刚好等于的，L 到 R 之间的，一个倍数的……</p>
+</blockquote>
+<p>看到“长度-最大值”为倍数的时候直接定档点分治，但是因为 T1 耗时间太多没有时间打。最后 T1T3 暴力写挂没有捞到分，总分只由 T2 AC 的 100 分。</p>
+<h2 id="问题所在和反思">问题所在和反思</h2>
+<p>T1 最开始想到点分治。显然过于草率被题目的“区间范围”误导了。是缺乏经验的表现。后来及时发现应该使用dsu on tree更好地维护本题。但是没有考虑到不从这个子树的根出发的路径的情况，这一发直接把我送走，考场上改到 11 点放弃了，晚上改到 2 点（刚刚终于 A 了，才开始写总结）</p>
+<p>T2 我承认找到正解有一定的运气成分。如果我很自信地认为我的 DP 很好，说不定我会更加往博弈论 DP 的方向想，而不会发现二分图最大匹配的做法。代码实现方面比较混乱，一定程度上造成调试困难。</p>
+<p>T3 是裸的点分治。我在做题记录里写到点分治是一个好写难调的做法。<s>改题的时候再一次验证了这个观点</s>，需要实现的细节繁多。属于典型的“在考场上我就算知道这题正解我也不会马上干这个题”的类型。</p>
+<p>用通俗的网络流行语总结，就叫做<strong>一切恐惧来源于火力不足</strong>，网络流和二分图题单上我几乎已经做完了所以很熟悉，但是点分治和 dsu，题单上这类题较少，练习不多，更容易出错，会对这类算法产生一种“No I can't”的心理。直接导致 T3 我知道正解但是还是 0 分的惨案。</p>
+<h2 id="题解">题解</h2>
+<h3 id="t1看门狗watchdog">T1，看门狗（watchdog）</h3>
+<blockquote>
+<p>给定一个大小为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的有根树，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 为根。每个节点有权值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo separator="true">,</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">l,r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 表示一个边数区间，边有边权，对于每一个子树，求经过这个子树的根节点的所有边数在子树根节点边数区间内的简单路径中的最大边权和。时间限制 4s，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>⩽</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">n\leqslant 10^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7733399999999999em;vertical-align:-0.13667em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span>，边权为不超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span> 的非负整数。</p>
+</blockquote>
+<p>第一眼看到区间范围，树上求一条路径的属性，容易联想到点分治。但是实际而言，权值范围过大，点分治不能很好地实现。考虑到时间限制为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span>s，可以放跑一些 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><msup><mi>log</mi><mo>⁡</mo><mn>2</mn></msup><mi>n</mi></mrow><annotation encoding="application/x-tex">n\log^2 n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0928879999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8984479999999999em;"><span style="top:-3.1473400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span></span></span></span> 的做法。因为边权一定是非负整数，所以对于同一条路径，向外延伸边数越多，权值一定不降。</p>
+<p>因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>⩽</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">n\leqslant 10^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7733399999999999em;vertical-align:-0.13667em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span>，边数的范围是与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 同级。假设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 为当前处理的子树。考虑开一个桶，下标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>，值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">t_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，记录在一个点的子树内，走 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 条边的路径的长度最大值。查询的时候查询 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msub><mi>l</mi><mi>u</mi></msub><mo separator="true">,</mo><msub><mi>r</mi><mi>u</mi></msub><mo>]</mo></mrow><annotation encoding="application/x-tex">[l_u,r_u]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span> 的最大值，考虑到路径必须要经过子树的根节点，不能朴素地直接处理，如果改成可以选择两条路，都从根开始，边数和在范围内，反而显得有些复杂。将一个点的深度引入到下标中，也就是插入下标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>+</mo><mi>d</mi><mi>e</mi><msub><mi>p</mi><mi>u</mi></msub></mrow><annotation encoding="application/x-tex">i+dep_u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，查询则为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msub><mi>l</mi><mi>u</mi></msub><mo>+</mo><mi>d</mi><mi>e</mi><msub><mi>p</mi><mi>u</mi></msub><mo>−</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>r</mi><mi>u</mi></msub><mo>+</mo><mi>d</mi><mi>e</mi><msub><mi>p</mi><mi>u</mi></msub><mo>−</mo><mn>1</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">[l_u+dep_u-1,r_u+dep_u-1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span>，简单修改即可，不要忘记桶的大小要因此开 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathdefault">n</span></span></span></span>。</p>
+<p>暴力地 dfs 维护这些东西，是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">n^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span> 的。如果预处理每一个点的重儿子，将暴力 dfs 转化为 dsu on tree，复杂度降为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n^2\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span></span></span></span>。因为开的桶只需要支持单点修改最大值，区间查询最大值，用树状数组维护为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><msup><mi>log</mi><mo>⁡</mo><mn>3</mn></msup><mi>n</mi></mrow><annotation encoding="application/x-tex">n\log^3 n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0928879999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8984479999999999em;"><span style="top:-3.1473400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span></span></span></span>（树状数组查询最值是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>log</mi><mo>⁡</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\log^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0928879999999999em;vertical-align:-0.19444em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8984479999999999em;"><span style="top:-3.1473400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> 级别的），用线段树维护为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><msup><mi>log</mi><mo>⁡</mo><mn>2</mn></msup><mi>n</mi></mrow><annotation encoding="application/x-tex">n\log^2 n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0928879999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8984479999999999em;"><span style="top:-3.1473400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span></span></span></span>。总的算法就是 dsu on tree，线段树维护边数桶。</p>
+<p>如果使用长链剖分 dsu on tree，时间复杂度可能会进一步优化为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span></span></span></span>，这里放的代码是重链剖分：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define LL long long
+
+using namespace std;
+const LL max_n=1000005,mod=998244353;
+inline LL read(){
+	LL x=0;bool w=0;char c=getchar();
+	while(c&lt;'0' || c&gt;'9') w|=c=='-',c=getchar();
+	while(c&gt;='0' &amp;&amp; c&lt;='9') x=(x&lt;&lt;1)+(x&lt;&lt;3)+(c^48),c=getchar();
+	return w?-x:x;
+}
+inline void write(LL x){
+	if(x&lt;0) x=-x,putchar('-');
+	if(x&gt;9) write(x/10);
+	putchar(x%10^48);
+}
+// 快速幂，题目要求按一种方案处理所有答案来避免输出过大。
+inline LL mi(LL a,LL p){
+	LL res=1;
+	while(p){
+		if(p&amp;1) res*=a,res%=mod;
+		a*=a,a%=mod,p&gt;&gt;=1;
+	}
+	return res;
+}
+
+// 以下都是线段树基操
+
+#define ls(x) (x&lt;&lt;1)
+#define rs(x) (x&lt;&lt;1|1)
+struct segment_tree{
+	LL mx[max_n*8],tg[max_n*8],tp[max_n*8];
+	int L[max_n*8],R[max_n*8];
+
+	inline void pushup(LL x){
+		tg[x]=max(tg[ls(x)],tg[rs(x)]);
+	}
+	inline void push(LL x,LL p){
+        // 下传标记
+		if(p==1 &amp;&amp; (~tg[x])){
+			tp[x]=p,
+			mx[x]=max(mx[x],tg[x]);
+			tg[x]=-1;
+		}
+		if(p==2){
+			tp[x]=p,
+			mx[x]=tg[x]=-1;
+		}
+	}
+	inline void pushdown(LL x){
+		if(!tp[x]) return;
+		push(ls(x),tp[x]),
+		push(rs(x),tp[x]);
+		tp[x]=0;
+	}
+	inline void build(LL x,LL l,LL r){
+		L[x]=l,R[x]=r,mx[x]=tg[x]=-1,tp[x]=0;
+		if(l==r) return;
+		LL mid=(l+r)&gt;&gt;1;
+		build(ls(x),l,mid),
+		build(rs(x),mid+1,r);
+	}
+	inline void chg(LL x,LL p,LL val){
+//		cerr&lt;&lt;&quot;p : &quot;&lt;&lt;p&lt;&lt;&quot; L,R : &quot;&lt;&lt;L[x]&lt;&lt;&quot;,&quot;&lt;&lt;R[x]&lt;&lt;&quot;\n&quot;;
+		if(L[x]==p &amp;&amp; R[x]==p){
+			tg[x]=max(tg[x],val);
+			return;
+		}
+		pushdown(x);
+		LL mid=(L[x]+R[x])&gt;&gt;1;
+		if(p&lt;=mid) chg(ls(x),p,val);
+		else chg(rs(x),p,val);
+		pushup(x);
+	}
+	inline LL ask(LL x,LL l,LL r){
+		if(l&lt;=L[x] &amp;&amp; R[x]&lt;=r)
+			return mx[x];
+		pushdown(x);
+		LL mid=(L[x]+R[x])&gt;&gt;1,res=-1;
+		if(l&lt;=mid) res=max(res,ask(ls(x),l,r));
+		if(r&gt;mid) res=max(res,ask(rs(x),l,r));
+		return res;
+	}
+}seg;
+#undef ls
+#undef rs
+// 封装链式前向星
+struct graph{
+	int ct,hd[max_n],to[max_n],nx[max_n],ln[max_n];
+
+	graph(){ct=1;}
+	inline void clear(){
+		ct=1;
+		memset(hd,0,sizeof(hd));
+	}
+	inline void add(LL u,LL v,LL w){
+		nx[++ct]=hd[u],hd[u]=ct,to[ct]=v,ln[ct]=w;
+	}
+}e;
+
+int n,l[max_n],r[max_n];
+// hv表示重儿子，sz表示子树大小
+// de表示深度，hs表示连向重儿子的边的编号
+int hv[max_n],sz[max_n],de[max_n],hs[max_n];
+inline void dfs(LL u,LL f){
+	de[u]=de[f]+1,sz[u]=1;
+	LL mx=0;
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		LL v=e.to[i];
+		if(v==f) continue;
+		dfs(v,u);
+		sz[u]+=sz[v];
+		if(sz[v]&gt;mx){
+			mx=sz[v];
+			hv[u]=v,
+			hs[u]=i;
+		}
+	}
+}
+
+LL ans[max_n];
+// 原先的桶用线段树代替了
+inline LL getans(LL u,LL w,LL dp,LL L,LL R){
+	LL res=-1;
+	seg.chg(1,de[u],w);
+	if(R&gt;=de[u]-dp)
+		res=seg.ask(1,dp+max(1LL,L+dp-de[u]),R-de[u]+dp*2);
+	if(res&gt;-1) res+=w;
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		LL v=e.to[i];
+		res=max(res,getans(v,w+e.ln[i],dp,L,R));
+	}
+	return res;
+}
+// s为0表示需要清空状态避免对兄弟造成影响
+// 方式是直接push(1,2);下传标记的时候可以做到全局修改
+inline void dsu(LL u,LL w,bool s){
+	LL res=-1;
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		LL v=e.to[i];
+		if(v==hv[u]) continue;
+		dsu(v,0,0);// 轻儿子要清空，重儿子不要
+	}
+	if(hv[u]) dsu(hv[u],w+e.ln[hs[u]],1);
+	seg.chg(1,de[u],w),seg.push(1,1);
+	
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		LL v=e.to[i];
+		if(v==hv[u]) continue;
+		LL tmp=getans(v,w+e.ln[i],de[u],l[u],r[u]);
+		seg.push(1,1);
+		if(tmp&gt;-1) tmp-=w*2;
+		res=max(res,tmp);
+	}
+	LL tmp=seg.ask(1,l[u]+de[u],r[u]+de[u]);
+	if(tmp&gt;-1) tmp-=w;
+	res=max(res,tmp);
+	ans[u]=res;
+	if(!s) seg.push(1,2);
+}
+
+signed main(){
+	n=read();
+	for(register int i=1;i&lt;=n;++i)
+		l[i]=read(),r[i]=read();
+	for(register int i=2;i&lt;=n;++i){
+		LL fa=read(),w=read();
+		e.add(fa,i,w);
+	}
+	seg.build(1,1,2*n),seg.push(1,2);
+	dfs(1,1),
+	dsu(1,0,0);
+	LL sum=0;
+    // 没有在简化题意里提到的
+    // 避免输出过大，题目要求按此方案处理答案
+	for(register int i=1;i&lt;=n;++i){
+//		cerr&lt;&lt;ans[i]&lt;&lt;&quot;\n&quot;;
+		sum+=ans[i]%mod*mi(23333,n-i)%mod,
+		sum+=mod,sum%=mod;
+	}
+	write(sum),putchar('\n');
+	return 0;
+}
+</code></pre>
+<h3 id="t2游戏b">T2，游戏（b）</h3>
+<blockquote>
+<p>一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>∗</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n*m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 的方格棋盘，有的格子有障碍物，A 先选一个格子放一个棋子，然后 B 先手，和 A 轮流移动这个棋子。每次移动可以向上/下/左/右移动一个格子。不能移到棋盘外，不能移到障碍物上，不能移到一个走过的格子上。无法行动者算输。求所有可以让 A 必胜的开始格。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>⩽</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">n,m\leqslant 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83111em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span>。</p>
+</blockquote>
+<p>唯一一个考场上做出来的题目。</p>
+<p>看到这个刚好不大但是不能状压的数据——基本上是网络流二分图动态规划三选一了。考虑到博弈论，理应优先想到决策树上 DP，但是又因为是网格，网格图也是二分图的一种，而且经常有网格图上网络流的魔仙题目。因此很难一眼得到大致算法的感觉。我的第一想法是网络流，但是找不到一个很好的把它转化为最大瘤或者最小彁的方式。所以从二分图的方法考虑问题。</p>
+<p>已经是二分图了所以显然不是二分图判定。从最大匹配的角度来看。根据网格图建图套路法则，我们按照国际象棋染色法染色后，相邻的不是障碍的格子连边。如果得到的二分图存在完美匹配，那么无论 A 选什么格子，B 一定可以沿着一条匹配边移动。A 就只能沿一条不匹配边移动，B 又可以延匹配边移动……我们发现因为点和边都不能走重复，所以匹配边走完时，或者走完前，A 就输掉了。因此完美匹配的情况一定无解。</p>
+<p>用这种思想，考虑到对于一个二分图，如果存在最大匹配，A 放在最大匹配点，B 就可以走匹配边，又陷入这样的死境。所以 A 要放在一个不是最大匹配点的地方，使得 B 第一步只能走非匹配边，容易得到一定可以走到一个最大匹配点。然后把走匹配边的机会送给了 A。</p>
+<p>因此对于那些最大匹配点集不包含的点，就是答案。如果有多个最大匹配，只要有一个最大匹配不包括就可以了。</p>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;vector&gt;
+#include&lt;string.h&gt;
+#include&lt;iostream&gt;
+using namespace std;
+const int max_n=105;
+inline int read(){
+	int x=0;bool w=0;char c=getchar();
+	while(c&lt;'0' || c&gt;'9') w|=c=='-',c=getchar();
+	while(c&gt;='0' &amp;&amp; c&lt;='9') x=(x&lt;&lt;1)+(x&lt;&lt;3)+(c^48),c=getchar();
+	return w?-x:x;
+}
+inline void write(int x){
+	if(x&lt;0) x=-x,putchar('-');
+	if(x&gt;9) write(x/10);
+	putchar(x%10^48);
+}
+inline bool reads(){
+	char c=getchar();
+	while(c!='.' &amp;&amp; c!='#') c=getchar();
+	return c=='.';
+}
+
+const int dx[4]={-1,1,0,0};
+const int dy[4]={0,0,1,-1};
+
+int n,m,id[max_n][max_n],cnt,tot;
+bool a[max_n][max_n];
+
+std::pair&lt;int,int&gt; mp[max_n*max_n];
+
+struct graph{
+	int ct,hd[max_n*max_n*2],to[max_n*max_n*2],nx[max_n*max_n*2];
+
+	graph(){ct=1;}
+	inline void clear(){
+		ct=1;
+		memset(hd,0,sizeof(hd));
+	}
+	inline void add(int u,int v){
+		nx[++ct]=hd[u],hd[u]=ct,to[ct]=v;
+	}
+}e;
+
+int con[max_n*max_n],get[max_n*max_n];
+bool vis[max_n*max_n];
+
+inline bool dfs(int u,int p){ // 匈牙利跑最大匹配
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		int v=e.to[i];
+		if(con[v]==p) continue;
+		con[v]=p;
+		if(!get[v] || dfs(get[v],p)){
+			get[v]=u;
+			return 1;
+		}
+	}
+	return 0;
+}
+
+inline void tag(int u){ // 标记那些存在最大匹配没有的点
+	++tot;
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		int v=e.to[i];
+		if(!get[v]) continue;
+		if(!vis[get[v]]){
+			vis[get[v]]=1;
+			tag(get[v]);
+		}
+	}
+}
+
+signed main(){
+	n=read(),m=read();
+	for(register int i=1;i&lt;=n;++i)
+		for(register int j=1;j&lt;=m;++j){
+			a[i][j]=reads();
+			if(a[i][j]){
+				id[i][j]=++cnt;
+				mp[cnt]=std::make_pair(i,j);
+			}
+		}
+	for(register int i=1;i&lt;=n;++i)
+		for(register int j=1;j&lt;=m;++j)
+			if(a[i][j] &amp;&amp; ((i+j)&amp;1)) // 国际象棋染色法，i+j为奇数的是黑格子
+				for(register int k=0;k&lt;4;++k){
+					int tx=i+dx[k],ty=j+dy[k];
+					if(tx&lt;1 || ty&lt;1 || tx&gt;n || ty&gt;m) continue;
+					if(a[tx][ty])
+						e.add(id[i][j],id[tx][ty]),
+						e.add(id[tx][ty],id[i][j]);
+				}
+	for(register int i=1;i&lt;=n;++i)
+		for(register int j=1;j&lt;=m;++j)
+			if(a[i][j] &amp;&amp; ((i+j)&amp;1))
+				dfs(id[i][j],id[i][j]);
+
+	for(register int i=1;i&lt;=cnt;++i)
+		if(get[i])
+			get[get[i]]=i;
+	for(register int i=1;i&lt;=cnt;++i) // 找出所有存在最大匹配没有这个的点
+    // tot 统计答案，vis 避免重复跑
+		if(!get[i]){
+			vis[i]=1;
+			tag(i);
+		}
+	for(register int i=1;i&lt;=cnt;++i)
+		cerr&lt;&lt;get[i]&lt;&lt;&quot;\n&quot;;
+	write(tot),putchar('\n');
+	for(register int i=1;i&lt;=cnt;++i)
+		if(vis[i])
+			write(mp[i].first),putchar(' '),
+			write(mp[i].second),putchar('\n');
+	return 0;
+}
+</code></pre>
+<h3 id="t3-树c">T3 树（c）</h3>
+<p><s>为什么 T2 是 b，T3 是 c，T1 不是 a 啊</s></p>
+<blockquote>
+<p>给定一个树，每个点有一个非负整数点权，记一条路径的权值为路径上点权和减去点权最大值，求路径权值恰好为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span> 的非负整数倍的路径个数。特别地，一个单独的点也算作一条路径。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>⩽</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n\leqslant 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7733399999999999em;vertical-align:-0.13667em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>，点权和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span> 不超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">10^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span>。</p>
+</blockquote>
+<p>显然可以用比较裸的点分治进行。因为点权和可能比较大，但是只考虑边权是不是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span> 的倍数，再加上没有除法，可以直接取模判 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>。整体比较模板。</p>
+<p>注意到一个单独的点也算作一条路径，但是一个单独的点组成的路径的权值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，一定符合条件。因此只需要在跑完点分治得到的答案上加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 即可，不需要特殊操作。</p>
+<p>代码：</p>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include&lt;string.h&gt;
+#define int long long
+const int max_n=100005,max_m=10000005;int mod;
+inline int read(){
+	int x=0;char c=getchar();
+	while(c&lt;'0' || c&gt;'9') c=getchar();
+	while(c&gt;='0' &amp;&amp; c&lt;='9') x=(x&lt;&lt;1)+(x&lt;&lt;3)+(c^48),c=getchar();
+	return x;
+}
+inline void write(int x){
+	if(x&gt;9) write(x/10);
+	putchar(x%10^48);
+}
+inline int max(int a,int b){return a&gt;b?a:b;}
+
+struct graph{
+	int ct,hd[max_n*2],to[max_n*2],nx[max_n*2];
+
+	graph(){ct=1;}
+	inline void clear(){
+		ct=1;
+		memset(hd,0,sizeof(hd));
+	}
+	inline void add(int u,int v){
+		nx[++ct]=hd[u],hd[u]=ct,to[ct]=v;
+	}
+}e;
+
+int n,a[max_n],root;
+
+bool vis[max_n];
+
+inline int getsize(int u,int fa){ // 返回一个点的子树大小
+// （本来想直接记录size每次更新但是比较难处理就算了）
+	int res=1;
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		int v=e.to[i];
+		if(v==fa || vis[v]) continue;
+		res+=getsize(v,u);
+	}
+	return res;
+}
+
+inline int getroot(int u,int fa,int &amp;rt,int sz){ // 找根
+	int res=1,s;bool ok=1;
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		int v=e.to[i];
+		if(v==fa || vis[v]) continue;
+		s=getroot(v,u,rt,sz);
+		res+=s;
+		if(s*2&gt;sz) ok=0;
+	}
+	if((sz-res)*2&gt;sz) ok=0;
+	if(ok) rt=u;
+	return res;
+}
+
+int ans,tot,t[max_m];
+// ans记录答案，tot记录点数，t[]是桶
+
+struct dot{ // 点分治基操记录信息，封装了。
+	int sm,mx; // sm-&gt;sum mx-&gt;max
+	dot(){sm=mx=0;}
+	
+	inline void init(int s,int m){
+		sm=s,mx=m;
+	}
+}c[max_n],k[max_n];
+
+inline bool cmp(dot a,dot b){ // 按max排序
+	return a.mx&lt;b.mx;
+}
+
+inline void pre(int u,int fa,int x,int sm){ // 提前处理好每个点信息
+	x=max(x,a[u]),
+	sm+=a[u],sm%=mod;
+	k[u].init(sm,x);
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		int v=e.to[i];
+		if(v==fa || vis[v]) continue;
+		pre(v,u,x,sm);
+	}
+}
+
+inline void push(int u,int fa){ // 将要用到的信息递归读取储存
+	c[++tot]=k[u];
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		int v=e.to[i];
+		if(v==fa || vis[v]) continue;
+		push(v,u);
+	}
+}
+
+inline int calc(int u,int val){
+	tot=0;push(u,0);
+	std::sort(c+1,c+1+tot,cmp); // 排序后统计答案
+	
+	int res=0;
+	for(register int i=1;i&lt;=tot;++i){
+		res+=t[((c[i].mx+val-c[i].sm)%mod+mod)%mod],
+		++t[(c[i].sm+mod)%mod];
+	}
+	for(register int i=1;i&lt;=tot;++i)
+		--t[(c[i].sm+mod)%mod];
+	return res;
+}
+
+inline void dfz(int u){ // 点分治部分
+	int sz=getsize(u,0);
+	getroot(u,0,u,sz);
+	pre(u,0,0,0);
+
+	ans+=calc(u,a[u]);
+	vis[u]=1;
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		int v=e.to[i];
+		if(vis[v]) continue;
+		ans-=calc(v,a[u]);
+	}
+
+	for(register int i=e.hd[u];i;i=e.nx[i]){
+		int v=e.to[i];
+		if(vis[v]) continue;
+		dfz(v);
+	}
+}
+
+signed main(){
+	n=read(),mod=read();
+	for(register int i=2;i&lt;=n;++i){
+		int x=read(),y=read();
+		e.add(x,y),e.add(y,x);
+	}
+	for(register int i=1;i&lt;=n;++i)
+		a[i]=read();
+	dfz(1);
+	write(ans+n),putchar('\n'); // 别忘记加 n
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CF1557和CF1530部分题解]]></title>
         <id>https://Walker68145.github.io/post/cf1557-he-cf1530-bu-fen-ti-jie/</id>
@@ -2810,162 +3297,6 @@ int main(){
    printf(&quot;%d&quot;,s);
    return 0;
 }
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[贴海报 题解]]></title>
-        <id>https://Walker68145.github.io/post/tie-hai-bao-ti-jie/</id>
-        <link href="https://Walker68145.github.io/post/tie-hai-bao-ti-jie/">
-        </link>
-        <updated>2020-02-06T02:55:36.000Z</updated>
-        <content type="html"><![CDATA[<p><strong><a href="https://www.luogu.com.cn/problem/P3740">题目传送门</a></strong></p>
-<p>这道题题解里各位都用的线段树、浮水法，本蒟蒻完全不会，这里给出我的方法，既没有线段树也没有浮水法，较为易懂（?）。</p>
-<p>可以发现<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>的范围极其大，但是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>的范围很小，只有1000，所以可以想到一个大致为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>m</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">m^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>的算法。</p>
-<p>假设输入顺序代表时间顺序，一行为一天（这样好理解）</p>
-<p>每当一张海报贴到墙上时，只需要知道这张海报对以前贴的海报造成了什么影响即可。</p>
-<p>具体修改方法：通过修改一张海报左端点右端点位置实现。</p>
-<p>假设一张海报左端点为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">l_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，右端点为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
-<p>（注：下列图中红色表示以前贴的海报，蓝色表示今天贴的海报）</p>
-<ul>
-<li>情况一：完全覆盖，如图。</li>
-</ul>
-<figure data-type="image" tabindex="1"><img src="https://pic.imgdb.cn/item/60f55abb5132923bf85dfc5c.png" alt="完全覆盖" loading="lazy"></figure>
-<p>可以专门设计一个bool数组，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>u</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">u_i=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>表示这个海报没有用了。</p>
-<ul>
-<li>情况二：毫不相关，如图。</li>
-</ul>
-<figure data-type="image" tabindex="2"><img src="https://pic.imgdb.cn/item/60f55ad05132923bf85e582f.png" alt="毫不相关" loading="lazy"></figure>
-<p>这时我们不用管就行。</p>
-<ul>
-<li>情况三：覆盖了左边部分，如图。</li>
-</ul>
-<figure data-type="image" tabindex="3"><img src="https://pic.imgdb.cn/item/60f55aec5132923bf85ed473.png" alt="覆盖左边" loading="lazy"></figure>
-<p>此时要将红色海报的左端点挪到蓝色海报右端点的右边。</p>
-<p>因为红色海报的地盘被蓝色海报盖掉了一部分，那一部分已经不再是红色海报的地盘了，可以视为红色海报本来就没有这个地盘。</p>
-<ul>
-<li>情况四：覆盖了右边部分，如图。</li>
-</ul>
-<figure data-type="image" tabindex="4"><img src="https://pic.imgdb.cn/item/60f55afd5132923bf85f1de2.png" alt="覆盖右边" loading="lazy"></figure>
-<p>将红色海报的右端点挪到蓝色海报左端点的左边。</p>
-<ul>
-<li>情况五，也是最麻烦的，刚好劈开了以前的海报，如图。</li>
-</ul>
-<figure data-type="image" tabindex="5"><img src="https://pic.imgdb.cn/item/60f55b0f5132923bf85f6c8e.png" alt="中间" loading="lazy"></figure>
-<p>这时候我们可以视为这个红色海报不再是一个整体了，而是变成了颜色相同的两张海报。</p>
-<p>第一张海报的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">l_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>还是原来的红色海报的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">l_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，而<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">r_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>变成了蓝色海报左端点的左边。</p>
-<p>第二张海报的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">l_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>变成了蓝色海报右端点的右边，而<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">r_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>还是原来的红色海报的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。</p>
-<p>为了避免统计时认成两张不同的海报，我们还需要一个数组<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>d</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">d_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>来标记它的颜色，多张海报颜色相同就视为这些海报是同一张海报。</p>
-<p>到这里，每张海报的信息点就出来了，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>表示左端点位置，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>表示右端点位置，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span>表示是否永远离开了这面墙，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span></span></span></span>表示颜色。</p>
-<p>因为我们随时有可能在增加新海报，海报总数是不可估量的，所以要用C++的STL中的vector</p>
-<p>如果不清楚vector的话，直接把他理解成一个可以自动伸缩长短的数组，有一个叫push_back的函数可以在这个数组后面挤进去一个数。</p>
-<pre><code class="language-cpp">struct photo{
-   int l,r,d;
-   bool u;
-};
-vector&lt;photo&gt; a;
-</code></pre>
-<p>下面的码风过丑，需要逐行理解。</p>
-<pre><code class="language-cpp">for(register int i=1;i&lt;=m;++i){
-   photo p;
-   s=a.size(); //因为海报总数不一定是m了（情况五会增加海报数），所以需要实时更新海报数量
-   p.l=read();
-   p.r=read();
-   p.d=i;// 第i个海报颜色标记为i，绝对就不会搞混了
-   p.u=0;//刚贴的海报不可能全被覆盖
-
-   // 贴海报前需要审核，看看这张海报造成的影响
-
-   for(register int j=s-1;j&gt;=0;--j) if(!a[j].u){  // 如果这张海报已经阵亡就跳过
-  
-   	if(p.l&gt;a[j].r || p.r&lt;a[j].l) continue;// 毫无关系就跳过（情况二）
-   	if(p.l&lt;=a[j].l &amp;&amp; p.r&gt;=a[j].r) {a[j].u=1;continue;} //完全覆盖，标记一下这张海报凉了，然后不管了（情况一）
-       
-   	if(p.l&gt;a[j].l &amp;&amp; p.l&lt;a[j].r &amp;&amp; p.r&gt;a[j].l &amp;&amp; p.r&lt;a[j].r) a.push_back((photo){p.r+1,a[j].r,a[j].d,0}),a[j].r=p.l-1;
-       /*
-        * 如果是要劈成两半（情况五），
-        * 放一个新的海报（和原来海报颜色一样），再更新原来海报大小，
-        * if里面的条件需要仔细咀嚼
-        */
-       
-   	if(p.l&gt;a[j].l &amp;&amp; p.l&lt;a[j].r) a[j].r=p.l-1; //情况四
-   	if(p.r&gt;=a[j].l &amp;&amp; p.r&lt;a[j].r) a[j].l=p.r+1;//情况三
-
-   	if(a[j].l&gt;a[j].r) a[j].u=1; 
-      // 如果一张海报被折磨到左端点在右端点右边，说明他SPFA了
-   }
-   a.push_back(p); //所有事情搞完后，这张临时海报就审核通过贴墙上了
-}
-</code></pre>
-<p>最终我们把所有海报审核通过了，然后把这几天的活着的海报数一数就行。</p>
-<pre><code class="language-cpp">map&lt;int,bool&gt; k;	// k存储一个颜色是否出现过了
-/*
- * C++中的map可以视为一个万能数组，它的下标可以是任何东西
- * map&lt;int,bool&gt; 类似于创建一个 bool 类型的数组，它的下标的类型是 int
- * 需要注意的是，map的查询和修改不是O(1)，是O(logn)
- */
-s=a.size();
-for(register int i=0;i&lt;s;++i)
-   if(!a[i].u &amp;&amp; !k[a[i].d]){ // 如果这张海报还“活着”而且还没出现过
-   	++ans; // 墙上又多了一张能被看见过的海报
-       k[a[i].d]=1; // 标记这张海报出现过了，避免以后又遇到它就重复累加
-   }
-write(ans);
-</code></pre>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="Red"><mtext>基本完整代码</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{Red}\text{基本完整代码}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord text" style="color:Red;"><span class="mord cjk_fallback" style="color:Red;">基本完整代码</span></span></span></span></span>（省略了快读快写函数）</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-
-int n,m,ans,s; // n，m和题意一样，ans表示答案，s表示vector的长度
-struct photo{
-   int l,r,d;
-   bool u;
-};// 每个变量什么意思见上文
-
-vector&lt;photo&gt; a; // 存海报
-map&lt;int,bool&gt; k; // 判重
-
-int main(){
-   n=read(),m=read();
-  
-   for(register int i=1;i&lt;=m;++i){
-   photo p;
-   s=a.size(); //因为海报总数不一定是m了（情况五会增加海报数），所以需要实时更新海报数量
-   p.l=read();
-   p.r=read();
-   p.d=i;// 第i个海报颜色标记为i，绝对就不会搞混了
-   p.u=0;//刚贴的海报不可能全被覆盖
-
-   // 贴海报前需要审核，看看这张海报造成的影响
-
-   for(register int j=s-1;j&gt;=0;--j) if(!a[j].u){  // 如果这张海报已经阵亡就跳过
-  
-   	if(p.l&gt;a[j].r || p.r&lt;a[j].l) continue;// 毫无关系就跳过（情况二）
-   	if(p.l&lt;=a[j].l &amp;&amp; p.r&gt;=a[j].r) {a[j].u=1;continue;} //完全覆盖，标记一下这张海报凉了，然后不管了（情况一）
-       
-   	if(p.l&gt;a[j].l &amp;&amp; p.l&lt;a[j].r &amp;&amp; p.r&gt;a[j].l &amp;&amp; p.r&lt;a[j].r) a.push_back((photo){p.r+1,a[j].r,a[j].d,0}),a[j].r=p.l-1;
-       /* 如果是要劈成两半（情况五），
-        * 放一个新的海报（和原来海报颜色一样），再更新原来海报大小，
-        * if里面的条件需要仔细咀嚼
-        */
-   	if(p.l&gt;a[j].l &amp;&amp; p.l&lt;a[j].r) a[j].r=p.l-1; //情况四
-   	if(p.r&gt;=a[j].l &amp;&amp; p.r&lt;a[j].r) a[j].l=p.r+1;//情况三
-
-   	if(a[j].l&gt;a[j].r) a[j].u=1; 
-      // 如果一张海报被折磨到左端点在右端点右边，说明他SPFA了
-   }
-   a.push_back(p); //所有事情搞完后，这张临时海报就审核通过贴墙上了
-}
-   s=a.size();
-   for(register int i=0;i&lt;s;++i)
-   	if(!a[i].u &amp;&amp; !k[a[i].d]){ // 如果这张海报还“活着”而且还没出现过
- 	     ++ans; // 墙上又多了一张能被看见过的海报
-  	     k[a[i].d]=1; // 标记这张海报出现过了，避免以后又遇到它就重复累加
-   	}
-   write(ans);
-   return 0;
-}
-
 </code></pre>
 ]]></content>
     </entry>
