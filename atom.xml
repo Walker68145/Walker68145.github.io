@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-08-29T08:53:51.994Z</updated>
+    <updated>2021-08-29T09:07:20.822Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Walker68145.github.io"/>
     <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
@@ -40,11 +40,23 @@
 <figure data-type="image" tabindex="1"><img src="https://pic.imgdb.cn/item/612b2dbe44eaada739e532f7.png" alt="单峰函数" loading="lazy"></figure>
 <p><s>我才不会告诉你这就是一个二次函数和一次函数拼起来得到的</s></p>
 <p>对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>m</mi><mi>i</mi><mi>d</mi><mo>&lt;</mo><mi>r</mi><mi>m</mi><mi>i</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">lmid&lt;rmid</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span></span></span></span> 的情况，有两种可能：</p>
+<ul>
+<li>二者在同侧：</li>
+</ul>
 <figure data-type="image" tabindex="2"><img src="https://pic.imgdb.cn/item/612b2fba44eaada739e97b04.png" alt="l&lt;r 同侧" loading="lazy"></figure>
+<ul>
+<li>二者在异侧：</li>
+</ul>
 <figure data-type="image" tabindex="3"><img src="https://pic.imgdb.cn/item/612b31b544eaada739edb5de.png" alt="l&lt;r 异侧" loading="lazy"></figure>
 <p>不难发现这两种情况都直接将左端点移动到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>m</mi><mi>i</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">lmid</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span></span></span></span> 的位置即可。</p>
 <p>对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>m</mi><mi>i</mi><mi>d</mi><mo>&gt;</mo><mi>r</mi><mi>m</mi><mi>i</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">lmid&gt;rmid</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span></span></span></span> 的情况，也有两种可能：</p>
+<ul>
+<li>二者在同侧：</li>
+</ul>
 <figure data-type="image" tabindex="4"><img src="https://pic.imgdb.cn/item/612b31ed44eaada739ee2e14.png" alt="l&gt;r 同侧" loading="lazy"></figure>
+<ul>
+<li>二者在异侧：</li>
+</ul>
 <figure data-type="image" tabindex="5"><img src="https://pic.imgdb.cn/item/612b322044eaada739ee90c1.png" alt="l&gt;r 异侧" loading="lazy"></figure>
 <p>不难发现这两种情况都直接将右端点移动到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>m</mi><mi>i</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">rmid</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span></span></span></span> 的位置即可。</p>
 <hr>
