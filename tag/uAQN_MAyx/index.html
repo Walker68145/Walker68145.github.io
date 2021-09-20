@@ -9,7 +9,7 @@
 <meta name="description" content="qvq">
 <meta name="theme-color" content="#000">
 <title>Arahc&#39;s blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1632139709049">
+<link rel="shortcut icon" href="/favicon.ico?v=1632140107871">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -5243,7 +5243,7 @@ s-65,47,-65,47z M834 80H400000v40H845z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/sp
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;void GetMu(int n){ // 求 [1,n] 的莫比乌斯函数，顺便筛素数
     memset(isPrime, 1, sizeof(isPrime));
     // isPrime 是 bool，所以可以直接用 1 memset
-    isPrime[1] = 0, Mu[1] = 1;//1不是素数，mu(1)=1
+    isPrime[1] = 0, mu[1] = 1;//1不是素数，mu(1)=1
     for(register int i = 2; i &amp;lt;= n; ++i){
         if(isPrime[i]){// 是质数
             Prime[++cnt] = i, // prime 统计质数，cnt 为质数个数
