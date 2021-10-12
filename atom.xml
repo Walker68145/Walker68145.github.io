@@ -1,19 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-10-04T12:18:52.762Z</updated>
+    <updated>2021-10-12T14:06:25.609Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="https://Walker68145.github.io"/>
+    <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
     <subtitle>qvq</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>https://Walker68145.github.io/images/avatar.png</logo>
+    <icon>https://Walker68145.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Arahc&apos;s blog</rights>
     <entry>
+        <title type="html"><![CDATA[第一次月考考试总结]]></title>
+        <id>https://Walker68145.github.io/post/di-yi-ci-yue-kao-kao-shi-zong-jie/</id>
+        <link href="https://Walker68145.github.io/post/di-yi-ci-yue-kao-kao-shi-zong-jie/">
+        </link>
+        <updated>2021-10-09T14:24:52.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="薄弱科目分析">薄弱科目分析</h2>
+<h3 id="语文">语文</h3>
+<p>语文一直以来都是我的弱项，从初一开始一直到初三，中考的时候语文更是被一些信息组的同学拉了七八分（这就不免朋友或班上有人始终贯彻语文低于我就是考砸了的思想）。但是这一次月考里面，我不仅没有对自己的薄弱项目引起足够的重视，反而给语文安排的复习时间在所有科目里相对占少数，这一点属于态度不正。</p>
+<p>本次考试的客观题部分，因为时间分配不当和（其实只有一分钟）检查没有到位，出现了选择题漏填的情况。本场考试最不应该的扣分也都聚集在选择题。根据小题分析，与同班同学拉开差距的最主要原因也来自于选择题。</p>
+<p>主观题部分，默写送的六分每拿稳，很多题目自己感觉良好但是分数没有多少。预计这一个月老师会将很多语文题型的答题方法（第一个月没有讲到），希望抽出一些课余的时间，找机会从同学那里转抄笔记。</p>
+<p>作文部分，本次作文没有太大问题，46 分虽然不算太高，但是在班上也属于偏上游的位置。</p>
+<p>当前语文在所有科目之间的地位，必然是第一。分析语文在别的科目的关系：虽然我知道生物考的也不好，但是没有语文（全班倒数第一）那么糟糕，大体的成绩分布应该是语文严重偏科。语文的地位后续会逐渐超过英语。再加上语文学习的提高是漫长的过程，趁现在还是高一，认真复习语文、提高语文素养是其他文化科目中最重要的。</p>
+<h3 id="生物">生物</h3>
+<p>生物在初中是我的强项。本次考试大部分生物丢分源于两个方面：没有记清楚要背记的概念、生物学语言表述不严谨不恰当。其中前者是短时间内就可以有显著的提高的，因为生物背记部分还是参入了很多理解性部分，比起不同的几个语文答题方法有更强的关联性和逻辑性；后者是短时间无法通过简单练习得到显著提高的，考虑到题型的活性，需要大量的练习找到一个准确无误地组织语言的“感觉”。</p>
+<p>生物第二大没有考好的原因就是考场降智，一到考场上，很多在坐在座位上的前一秒都记得很好的东西就突然忘记了，这就是典型的“门口效应”。众所周知一切恐惧源于火力不足，只有做好充分的准备，才不会有较大的锅。</p>
+<p>选择题方面，选择题部分由若干块组成，基本上就是“坑”，“难”，“水”，“坑+难”几个部分组成。我在坑题上面掉了一些，难题上面倒是没有太多问题，表现的还是不够细心的问题。选择题方面的失误表现的是我的考试心态和策略问题，后续考试的时候，包括竞赛，都要把握住自己的心态，以避免失误。同时把握好自己的时间。</p>
+<p>大题方面，主要的原因在于语言表达不规范不准确。需要一定的练习。我个人认为可以选择做每日一道题左右的练习，但是在听课期间，要把自己的重心放在竞赛上面。</p>
+<h2 id="其它科目分析">其它科目分析</h2>
+<p>化学是个人认为除了语文和生物里面考试比较差的一门，化学的基础不牢实，知识建设有很多漏洞。</p>
+<p>历史是除此之外的比较不好的，选择题扣分太多。但是我并不是很在意，文科对我来说考到班级刚好中等已经很不错了。</p>
+<p>数学有很多因为自己算错和看错而丢分的地方，例如充分性必要性证明证反了，二次函数不等式解错之类，练习不到位的情况。</p>
+<p>英语自己还奢求“吃老本”，结果这次月考充分证明了我不能再吃老本。抓住每一次的早读和午读，作文的格式也要多加注意。</p>
+<p>物理是考的最好的，基本没有什么失误，水平也是正常水平。</p>
+<h2 id="整体总结">整体总结</h2>
+<p>这次月考的总体给我的感觉就是极大地低于我的预期，包括但不限于化学、语文、生物、数学等科目。一方面而言，或许是初中习惯的学习方法已经不能用于高中，一方面自己是否过于注意信息而延长了自己的晚上休息和午休。无论从什么立场讲这样都是不好的，如果因为竞赛任务导致小部分文化科的任务没完成，欠着就好了，为什么一定要用第二天上课用冰咖啡维持来完成几个人物呢。</p>
+<p>这次月考的分数就是对初入高中这一个月的对我的方法的否定。一方面揭示了我的薄弱科目在高中是多么彰显碍眼，另一方面更是一个警示：现在是高一第一个月了，及时改变自己的方法，对文化科目之间的弱项、强项以及竞赛科目要做一个更好的平衡，停课的时候不要多顾虑那么多的文化科目，反正已经考完了，安心下来把竞赛做好，等到联赛搞到成绩后再安心把文化课补回来。</p>
+<p>这也是一个条理，这是对后续几十天的条理，当然还需要有每一天的条理。应该要安排好时间，更好地规划条理，知道什么是要做的，什么可以放着、什么更重要，才可以规避诸如这一次月考出现的种种错误。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[2-SAT 入坟]]></title>
-        <id>http://localhost:4000/post/2-sat-ru-fen/</id>
-        <link href="http://localhost:4000/post/2-sat-ru-fen/">
+        <id>https://Walker68145.github.io/post/2-sat-ru-fen/</id>
+        <link href="https://Walker68145.github.io/post/2-sat-ru-fen/">
         </link>
         <updated>2021-10-04T01:16:11.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前置知识">前置知识</h2>
@@ -292,8 +322,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[平面图判定 题解]]></title>
-        <id>http://localhost:4000/post/ping-mian-tu-pan-ding-ti-jie/</id>
-        <link href="http://localhost:4000/post/ping-mian-tu-pan-ding-ti-jie/">
+        <id>https://Walker68145.github.io/post/ping-mian-tu-pan-ding-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/ping-mian-tu-pan-ding-ti-jie/">
         </link>
         <updated>2021-10-03T09:21:32.000Z</updated>
         <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P3209">题目传送门</a>。</p>
@@ -462,8 +492,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[图论入门到入土]]></title>
-        <id>http://localhost:4000/post/tu-lun-ji-lu-he-zong-jie/</id>
-        <link href="http://localhost:4000/post/tu-lun-ji-lu-he-zong-jie/">
+        <id>https://Walker68145.github.io/post/tu-lun-ji-lu-he-zong-jie/</id>
+        <link href="https://Walker68145.github.io/post/tu-lun-ji-lu-he-zong-jie/">
         </link>
         <updated>2021-09-20T10:55:35.000Z</updated>
         <content type="html"><![CDATA[<p>图论是信息学竞赛中永远不失特色的一种算法集合。最常见也是相对简单的有：最短路，最小生成树，拓扑排序，部分树上的问题。此外还有深造一些的，如网络流，Tarjan 等。</p>
@@ -988,8 +1018,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[LaTeX 入门]]></title>
-        <id>http://localhost:4000/post/latex-ru-men/</id>
-        <link href="http://localhost:4000/post/latex-ru-men/">
+        <id>https://Walker68145.github.io/post/latex-ru-men/</id>
+        <link href="https://Walker68145.github.io/post/latex-ru-men/">
         </link>
         <updated>2021-09-18T04:56:23.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前言规定">前言规定</h2>
@@ -1518,8 +1548,8 @@ $$
     </entry>
     <entry>
         <title type="html"><![CDATA[20210824 全真模考试题解与总结]]></title>
-        <id>http://localhost:4000/post/20210824-quan-zhen-mo-kao-shi-ti-jie-yu-zong-jie/</id>
-        <link href="http://localhost:4000/post/20210824-quan-zhen-mo-kao-shi-ti-jie-yu-zong-jie/">
+        <id>https://Walker68145.github.io/post/20210824-quan-zhen-mo-kao-shi-ti-jie-yu-zong-jie/</id>
+        <link href="https://Walker68145.github.io/post/20210824-quan-zhen-mo-kao-shi-ti-jie-yu-zong-jie/">
         </link>
         <updated>2021-08-29T06:08:05.000Z</updated>
         <content type="html"><![CDATA[<h2 id="总结">总结</h2>
@@ -1745,8 +1775,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[LCP和后缀数组]]></title>
-        <id>http://localhost:4000/post/lcp-he-sa/</id>
-        <link href="http://localhost:4000/post/lcp-he-sa/">
+        <id>https://Walker68145.github.io/post/lcp-he-sa/</id>
+        <link href="https://Walker68145.github.io/post/lcp-he-sa/">
         </link>
         <updated>2021-08-28T02:00:34.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前言">前言</h2>
@@ -1992,8 +2022,8 @@ for(register int i=1,j=0;i&lt;=n;++i){
     </entry>
     <entry>
         <title type="html"><![CDATA[CF1553部分题解及总结]]></title>
-        <id>http://localhost:4000/post/cf1553-bu-fen-ti-jie/</id>
-        <link href="http://localhost:4000/post/cf1553-bu-fen-ti-jie/">
+        <id>https://Walker68145.github.io/post/cf1553-bu-fen-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/cf1553-bu-fen-ti-jie/">
         </link>
         <updated>2021-08-15T09:35:12.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前言">前言</h2>
@@ -2453,8 +2483,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[全真模1部分题解及总结]]></title>
-        <id>http://localhost:4000/post/quan-zhen-mo-1-bu-fen-ti-jie-ji-zong-jie/</id>
-        <link href="http://localhost:4000/post/quan-zhen-mo-1-bu-fen-ti-jie-ji-zong-jie/">
+        <id>https://Walker68145.github.io/post/quan-zhen-mo-1-bu-fen-ti-jie-ji-zong-jie/</id>
+        <link href="https://Walker68145.github.io/post/quan-zhen-mo-1-bu-fen-ti-jie-ji-zong-jie/">
         </link>
         <updated>2021-08-12T01:33:24.000Z</updated>
         <content type="html"><![CDATA[<h2 id="考试策略">考试策略：</h2>
@@ -2940,8 +2970,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[CF1557和CF1530部分题解]]></title>
-        <id>http://localhost:4000/post/cf1557-he-cf1530-bu-fen-ti-jie/</id>
-        <link href="http://localhost:4000/post/cf1557-he-cf1530-bu-fen-ti-jie/">
+        <id>https://Walker68145.github.io/post/cf1557-he-cf1530-bu-fen-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/cf1557-he-cf1530-bu-fen-ti-jie/">
         </link>
         <updated>2021-08-10T04:23:03.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前言">前言</h2>
@@ -3457,239 +3487,6 @@ signed main(){
 </code></pre>
 <h2 id="后记">后记</h2>
 <p>两次比赛的整体发挥大体都比较正常。CF1557 的线段树优化 DP 没有想到。考场上对那些题目我的感觉就是会做的都会做，不会做的都不会做，就很离谱。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Rmq Problem / mex 题解]]></title>
-        <id>http://localhost:4000/post/rmq-problem-mex-ti-jie/</id>
-        <link href="http://localhost:4000/post/rmq-problem-mex-ti-jie/">
-        </link>
-        <updated>2021-08-01T16:41:19.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="题目大意">题目大意</h2>
-<p><a href="https://www.luogu.com.cn/problem/P4137">题目传送门</a></p>
-<p>给定一个静态区间，有多次询问，每次询问查询一段区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">mex</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\operatorname{mex}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mop"><span class="mord mathrm">m</span><span class="mord mathrm">e</span><span class="mord mathrm">x</span></span></span></span></span>。（一个区间的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">mex</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\operatorname{mex}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mop"><span class="mord mathrm">m</span><span class="mord mathrm">e</span><span class="mord mathrm">x</span></span></span></span></span> 为最小的没有出现在这个区间的数字中的自然数）</p>
-<p><s>题目大意一句话可还行</s></p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>⩽</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>⩽</mo><mn>2</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">1\leqslant n,m\leqslant 2\times 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78111em;vertical-align:-0.13667em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83111em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>，值域与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n,m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span></span></span></span> 相同。</p>
-<h2 id="题目分析">题目分析</h2>
-<h3 id="暴力求解">暴力求解</h3>
-<p>考虑到本题的数据范围整体较小，可以使用<strong>莫队</strong>进行。不带修的莫队的复杂度约为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">O</mi><mo>⁡</mo><mo>(</mo><mi>n</mi><msqrt><mi>n</mi></msqrt><mo>)</mo></mrow><annotation encoding="application/x-tex">\operatorname{O}(n\sqrt{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.05028em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">O</span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
--10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
--50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
-35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
--221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
-s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
-s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的，但是还要乘上一个求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">mex</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\operatorname{mex}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mop"><span class="mord mathrm">m</span><span class="mord mathrm">e</span><span class="mord mathrm">x</span></span></span></span></span> 的复杂度。</p>
-<p>如果我们打出这样的代码：</p>
-<pre><code class="language-cpp">inline void add(int pos){
-	++cnt[a[pos]]; // cnt 表示这个数字出现的次数，a 是原数组
-}
-inline void del(int pos){
-	--cnt[a[pos]];
-}
-inline int mex(){ // O(n) 跑一遍暴力求mex
-	for(register int i=0;i&lt;=max_n;++i)
-		if(cnt[i]&lt;=0)
-			return i;
-	return max_n+1; // 不会超过值域，所以可以这么写
-}
-
-inline void moque(){
-	sort(q+1,q+1+m,cmp1); // cmp1：按照莫队的排序方法排序
-
-	int l=1,r=0;
-	for(register int i=1;i&lt;=m;++i){ // 莫队板子
-		int ql=q[i].l,qr=q[i].r;
-		while(r&lt;qr) add(++r);
-		while(l&gt;ql) add(--l);
-		while(l&lt;ql) del(l++);
-		while(r&gt;qr) del(r--); // 莫队基操之：四个 while 整整齐齐
-		q[i].ans=mex(); // 更新答案
-	}
-	sort(q+1,q+1+m,cmp2); // cmp2：按照输入顺序排序
-}
-</code></pre>
-<p>交到洛谷上，即使你打开了 O2，也只能得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>81</mn></mrow><annotation encoding="application/x-tex">81</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mord">1</span></span></span></span> 分的不好的成绩。最坏是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">O</mi><mo>⁡</mo><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><msqrt><mi>n</mi></msqrt><mo>)</mo></mrow><annotation encoding="application/x-tex">\operatorname{O}(n^2\sqrt{n})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">O</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
--10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
--50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
-35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
--221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
-s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
-s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的。</p>
-<p>因为只 T 了两个点，让我不得不想到可不可以各种优化常数。</p>
-<h3 id="优化即正解">优化即正解</h3>
-<p>先摆上莫队的基操优化，奇偶性排序：</p>
-<pre><code class="language-cpp">// 分块时为根号分块，莫队基操
-inline bool cmp1(que a,que b){ // idx 表示这个点所在块
-	if(idx[a.l]!=idx[b.l]) return idx[a.l]&lt;idx[b.l];
-	if(idx[a.l]&amp;1) return a.r&lt;b.r;
-	return a.r&gt;b.r;
-}
-</code></pre>
-<p>把这个东西和上面放在一起，开 O2 才是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>81</mn></mrow><annotation encoding="application/x-tex">81</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span><span class="mord">1</span></span></span></span> 分……</p>
-<p>莫队是不好再进行什么阴间优化了，而且也不难发现本题的瓶颈在于如何求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">mex</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\operatorname{mex}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mop"><span class="mord mathrm">m</span><span class="mord mathrm">e</span><span class="mord mathrm">x</span></span></span></span></span>。考虑怎么优化求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">mex</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\operatorname{mex}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mop"><span class="mord mathrm">m</span><span class="mord mathrm">e</span><span class="mord mathrm">x</span></span></span></span></span> 的过程。</p>
-<p>因为求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">mex</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\operatorname{mex}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mop"><span class="mord mathrm">m</span><span class="mord mathrm">e</span><span class="mord mathrm">x</span></span></span></span></span> 只需要知道一个数是否在这个区间里面就可以了，不关心它具体出现的次数。因此，假设用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 表示这个数没出现，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 表示这个数出现了，显然开一个 bool 数组不是个很聪明的选择，因此我们考虑状态压缩。我们先不管值域，假设它们都能压到一个变量上。</p>
-<p>显然原来的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>n</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">cnt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span></span> 还是要保留的，因为我只有知道这个数出现多少次，才可以在这个数被删一次的时候判断它有没有出现。假设我们状态压缩的变量名字叫 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>e</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">seg</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span>。</p>
-<ul>
-<li>显然 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>e</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">seg</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 初始值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>。</li>
-<li>如果一个数本来没有，现在新出现了，我们需要把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>e</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">seg</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 的第这个数那么多位（为了方便一个二进制数的最低位我们当做第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 位）赋为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</li>
-<li>如果一个数本来有，现在没了，则把第这个数那么多为赋为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>。</li>
-<li>这段区间的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">mex</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\operatorname{mex}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mop"><span class="mord mathrm">m</span><span class="mord mathrm">e</span><span class="mord mathrm">x</span></span></span></span></span>，就是第一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 的位置是第几个。求第一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 的位置我们都不熟悉，但是如果给 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>e</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">seg</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 取个反，那不就变成求第一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的位置了吗？梦回树状数组，取反后直接 <code>seg&amp;-seg</code> ，但是注意这里我们得到的是一个状压后的二进制数（一个一后面一堆零的形式，显然它是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的自然数次幂），我们还要求出它的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 是第几个。因为最好别搞太复杂了，所以直接 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>log</mi><mo>⁡</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\log_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.93858em;vertical-align:-0.24414em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span></span></span></span>。</li>
-</ul>
-<p>（当然 C++ 自带的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>log</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\log</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span></span></span></span> 函数常数还是有一点的，但是因为我过了所以假装很小，实际上使用时一定要注意）</p>
-<p>到这里思路就很清晰了，把一个位变成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，可以考虑 <code>&amp;(~(1&lt;&lt;k))</code>，变成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 则是 <code>|(1&lt;&lt;k)</code>。</p>
-<p>但是现实很骨感，并不存在一个值域范围为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mn>2</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow></msup></mrow><annotation encoding="application/x-tex">2^{2\times 10^5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9869199999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9869199999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mbin mtight">×</span><span class="mord mtight">1</span><span class="mord mtight"><span class="mord mtight">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913142857142857em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span> 的变量让你肆意挥霍。所以我们只能老老实实把它拆成若干可以用位运算方便解决的变量。C++ 里面也只有 <code>unsigned long long</code> 比较给力了，一个变量有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>64</mn></mrow><annotation encoding="application/x-tex">64</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">4</span></span></span></span> 位。总的复杂度期望缩减为原来的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mn>1</mn><mn>64</mn></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{1}{64}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">6</span><span class="mord">4</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>。</p>
-<p>因此可以改造出如下代码：</p>
-<pre><code class="language-cpp">int cnt[max_n];
-unsigned long long seg[max_n]; // 前文提到的状压变量，现在变成数组了
-
-inline void add(int pos){
-	if(!cnt[a[pos]]){ // 本来没有，现在加进去
-		int x=a[pos]; // x/64 为下标，x%64 为这个下标的 seg 的第几位
-		unsigned long long y=x%64;
-		seg[x/64]|=(1ULL&lt;&lt;y);
-	}
-	++cnt[a[pos]];
-}
-inline void del(int pos){ // 和 add 基本一致
-	--cnt[a[pos]];
-	if(!cnt[a[pos]]){
-		int x=a[pos];
-		unsigned long long y=x%64;
-		seg[x/64]&amp;=(~(1ULL&lt;&lt;y));
-	}
-}
-inline int mex(){
-	for(register int i=0;i&lt;=max_n;++i){ // 先顺序查找哪个 seg
-		unsigned long long tmp=(~seg[i]); // 不要忘记先取反再 lowbit
-        // 如果取反后是 0,说明这个 seg 全是 1，mex 不在这个 seg 里，直接过掉
-		if(tmp){
-			unsigned long long k=(tmp&amp;-tmp);
-            // 取 lowbit，这是得到的二进制数，需要还原
-			return i*64+(int)log2(k); // 还原，这个式子一拍脑袋就知道
-		}
-	}
-	return -1;
-}
-</code></pre>
-<h2 id="代码与效率">代码与效率</h2>
-<h3 id="代码">代码</h3>
-<p>总的代码如下，因为主体部分已经在前面写到并且加注释了，因此放的是清爽无注释版本：</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-const int max_n=200005;
-inline int read(){
-	int x=0;bool w=0;char c=getchar();
-	while(c&lt;'0' || c&gt;'9') w|=c=='-',c=getchar();
-	while(c&gt;='0' &amp;&amp; c&lt;='9') x=(x&lt;&lt;1)+(x&lt;&lt;3)+(c^48),c=getchar();
-	return w?-x:x;
-}
-inline void write(int x){
-	if(x&lt;0) x=-x,putchar('-');
-	if(x&gt;9) write(x/10);
-	putchar(x%10^48);
-}
-
-int n,m,a[max_n];
-
-struct que{
-	int l,r,id,ans;
-	inline void init(int _l,int _r,int _id){
-		l=_l,
-		r=_r,
-		id=_id;
-		ans=0;
-	}
-}q[max_n];
-
-int idx[max_n];
-
-inline bool cmp1(que a,que b){
-	if(idx[a.l]!=idx[b.l]) return idx[a.l]&lt;idx[b.l];
-	if(idx[a.l]&amp;1) return a.r&lt;b.r;
-	return a.r&gt;b.r;
-}
-inline bool cmp2(que a,que b){
-	return a.id&lt;b.id;
-}
-
-int cnt[max_n];
-unsigned long long seg[max_n];
-
-inline void add(int pos){
-	if(!cnt[a[pos]]){
-		int x=a[pos];
-		unsigned long long y=x%64;
-		seg[x/64]|=(1ULL&lt;&lt;y);
-	}
-	++cnt[a[pos]];
-}
-inline void del(int pos){
-	--cnt[a[pos]];
-	if(!cnt[a[pos]]){
-		int x=a[pos];
-		unsigned long long y=x%64;
-		seg[x/64]&amp;=(~(1ULL&lt;&lt;y));
-	}
-}
-inline int mex(){
-	for(register int i=0;i&lt;=max_n;++i){
-		unsigned long long tmp=(~seg[i]);
-		if(tmp){
-			unsigned long long k=(tmp&amp;-tmp);
-			return i*64+(int)log2(k);
-		}
-	}
-	return -1;
-}
-
-inline void moque(){
-	sort(q+1,q+1+m,cmp1);
-
-	int l=1,r=0;
-	for(register int i=1;i&lt;=m;++i){
-		int ql=q[i].l,qr=q[i].r;
-		while(r&lt;qr) add(++r);
-		while(l&gt;ql) add(--l);
-		while(l&lt;ql) del(l++);
-		while(r&gt;qr) del(r--);
-		q[i].ans=mex();
-	}
-	sort(q+1,q+1+m,cmp2);
-}
-
-signed main(){
-	n=read(),m=read();
-	for(register int i=1;i&lt;=n;++i)
-		a[i]=read();
-
-	for(register int i=1;i&lt;=m;++i){
-		int l=read(),r=read();
-		q[i].init(l,r,i);
-	}
-
-	int sq=sqrt(n);
-	for(register int i=1;i&lt;=n;++i) idx[i]=i/sq+1;
-
-	moque();
-	for(register int i=1;i&lt;=m;++i)
-		write(q[i].ans),putchar('\n');
-	return 0;
-}
-</code></pre>
-<h3 id="实际效率">实际效率</h3>
-<p>时间复杂度是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">O</mi><mo>⁡</mo><mo>(</mo><mfrac><mrow><msup><mi>n</mi><mn>2</mn></msup><msqrt><mi>n</mi></msqrt></mrow><mn>64</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\operatorname{O}(\dfrac{n^2\sqrt{n}}{64})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.177108em;vertical-align:-0.686em;"></span><span class="mop"><span class="mord mathrm">O</span></span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">6</span><span class="mord">4</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
--10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
--50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
-35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
--221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
-s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
-s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>（最坏还是 T，本来想写 <code>bitset</code>，后来觉得算了别搞那么麻烦，最后居然过了，不知是我常数小还是这题数据弱），空间复杂度是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">O</mi><mo>⁡</mo><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\operatorname{O}(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm">O</span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。</p>
-<p>实际在洛谷评测机上跑的时候感觉还挺快（两份的代码完全一致，都是莫队+状压）：</p>
-<ul>
-<li><a href="https://www.luogu.com.cn/record/54716885">无 O2 记录</a>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2.34</mn><mi mathvariant="normal">s</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">2.34\operatorname{s}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">.</span><span class="mord">3</span><span class="mord">4</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">s</span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6.60</mn><mi mathvariant="normal">MB</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">6.60\operatorname{MB}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">.</span><span class="mord">6</span><span class="mord">0</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">M</span><span class="mord mathrm">B</span></span></span></span></span></li>
-<li><a href="https://www.luogu.com.cn/record/54739149">开 O2 记录</a>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>928</mn><mi mathvariant="normal">ms</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">928\operatorname{ms}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">9</span><span class="mord">2</span><span class="mord">8</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">m</span><span class="mord mathrm">s</span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7.05</mn><mi mathvariant="normal">MB</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">7.05\operatorname{MB}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">7</span><span class="mord">.</span><span class="mord">0</span><span class="mord">5</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">M</span><span class="mord mathrm">B</span></span></span></span></span></li>
-</ul>
-<p>可以发现本来只是一个图运气的常数优化，效果居然如此显著。开 O2 版本在写博客的时候在最优解的第五页（接近末尾了，因此各位看到时估计掉到后面去很多了，毕竟大部分写的都是莫队+值域分块，甚至效率更高的权值线段树），虽然算不上很快但是已经不慢了，比我的期望高多了。</p>
 ]]></content>
     </entry>
 </feed>
