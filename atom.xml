@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-10-19T23:42:44.155Z</updated>
+    <updated>2021-10-19T23:45:56.560Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Walker68145.github.io"/>
     <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
@@ -25,7 +25,7 @@
 <p>多项式的定义初中就有，没必要多说吧。本文将会积累所有学了的有关多项式的知识，不定期更新内容。</p>
 <ul>
 <li>本博客全文所有内容均不属于提高组考试范围，你要是硬说多项式加法可能有……那我也不能反驳。</li>
-<li>本博客没有任何代码！没有任何完整的代码！没有任何完整的代码！</li>
+<li>本博客没有代码！没有完整的代码！没有任何完整的代码！</li>
 </ul>
 <h2 id="多项式求和">多项式求和</h2>
 <p><strong>合并同类项</strong>，没必要多说吧。多项式求差同理。</p>
