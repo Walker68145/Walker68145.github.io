@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-10-25T02:02:59.663Z</updated>
+    <updated>2021-10-25T02:14:33.455Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Walker68145.github.io"/>
     <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
@@ -30,8 +30,6 @@
 <p>错误的原因是，可以证明这并不是单峰的。</p>
 <h2 id="改题解法正解">改题解法（正解）</h2>
 <p>既然并不是单峰的，那不就可以模拟退火吗？</p>
-<p>我们考虑函数长这个样子：</p>
-<figure data-type="image" tabindex="1"><img src="https://pic.imgdb.cn/item/617569712ab3f51d9148cefe.png" alt="" loading="lazy"></figure>
 <p>朴素的贪心算法，我们找到一个点，每次贪心地走左边或者右边，如果当前这个点的函数值（即答案）更小就走这边。显然这是错误的，我们会卡死在一个局部最优的情况。这个贪心显然被假掉的原因就在于我们被拘束在一个局部凸包里面，无法跳出去。如果我们给一个概率使它可以跳出去呢？</p>
 <p>这就是模拟退火有一定概率得到正确答案的原因。确切地说，考虑模拟物理降温的过程：</p>
 <ul>
