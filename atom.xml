@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-10-25T01:29:13.481Z</updated>
+    <updated>2021-10-25T01:42:40.140Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Walker68145.github.io"/>
     <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
@@ -79,7 +79,7 @@ int ans,nowans,R1,R2;
 
 int In[max_n],a1[max_n*4],a2[max_n*4],ar[max_n],br[max_n];
 
-inline int check(int in){
+inline int check(int in){ // O(n) 判断多少个飞机停桥
 	if(In[in]) return In[in];
 	int out=n-in,res=0,tmp=0;
 	for(register int i=1;i&lt;=R1;++i)
@@ -89,12 +89,12 @@ inline int check(int in){
 	for(register int i=1;i&lt;=R1;++i){
 		if(a1[i]==1 &amp;&amp; tmp&lt;in)
 			++res;
-		else if(a1[i]==1)
+		else if(a1[i]==1) // 满员了，删除这个飞机的信息
 			a1[i]=a1[ar[i]]=0;
 		tmp+=a1[i];
 	}
 	tmp=0;
-	for(register int i=1;i&lt;=R2;++i){
+	for(register int i=1;i&lt;=R2;++i){ // 国际航班同理
 		if(a2[i]==1 &amp;&amp; tmp&lt;out)
 			++res;
 		else if(a2[i]==1)
@@ -108,7 +108,7 @@ int As[max_n];
 const int tim=1;
 const double tem=0.98,delta=0.98,eps=0.0001;
 
-inline void findans(){
+inline void findans(){ // 模拟退火
 	int anss=ans,nowanss=nowans;
 	double nowt=tem;
 	while(nowt&gt;eps){
@@ -153,7 +153,7 @@ signed main(){
         lisan[++cntls]=l,
         lisan[++cntls]=r;
     }
-    sort(lisan+1,lisan+1+cntls),R1=cntls;
+    sort(lisan+1,lisan+1+cntls),R1=cntls; // 离散化
     for(register int i=1;i&lt;=m1;++i){
         a[i].l=lower_bound(lisan+1,lisan+1+cntls,a[i].l)-lisan;
         a[i].r=lower_bound(lisan+1,lisan+1+cntls,a[i].r)-lisan;
@@ -175,7 +175,7 @@ signed main(){
         br[b[i].l]=b[i].r;
     }
 
-    sort(a+1,a+1+m1,cmp),
+    sort(a+1,a+1+m1,cmp), // 记得排序
     sort(b+1,b+1+m2,cmp);
 
 	ans=check(n/2),nowans=n/2;
