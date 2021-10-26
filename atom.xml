@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-10-26T03:40:00.252Z</updated>
+    <updated>2021-10-26T03:57:59.660Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Walker68145.github.io"/>
     <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
@@ -18,8 +18,11 @@
         <updated>2021-10-24T13:21:23.000Z</updated>
         <content type="html"><![CDATA[<h2 id="题目大意">题目大意</h2>
 <p><a href="https://www.luogu.com.cn/problem/P7913">题目传送门</a>。</p>
+<p>分析部分为了节省字数，把国内区叫做 A，国际区叫做 B。</p>
+<blockquote>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个廊桥分配给 A 和 B。A 有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">m_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 个飞机 B 有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">m_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 个飞机。每个飞机有一段区间表示停留时间。先到的飞机可以先占自己类的廊桥，使用到飞走，如果自己的类别没有可以使用的廊桥就只能停在飞机场。求最多能让多少飞机停在廊桥。</p>
-<p>本博客包含一个错解和两个正解。<strong>错解三分查找</strong>中给出了错误原因，两个正解分别是<strong>真正的正解线段树</strong>和<strong>玄学乱糊模拟退火</strong>。两个正解都给出了带注释的代码，希望大家阅读愉快。</p>
+</blockquote>
+<p>本博客包含一个错解和两个正解（准确地说是正解和骗分在冥间数据骗到满分的解）。<strong>错解三分查找</strong>中给出了错误原因和 Hack，正解和伪正解分别是<strong>真正的正解线段树</strong>和<strong>玄学乱糊模拟退火</strong>。两个正解都给出了带注释的代码，希望大家阅读愉快。</p>
 <h2 id="考场解法错解">考场解法（错解）</h2>
 <p>考虑一组最优解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">a_1,a_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 表示给 A 类 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">a_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 廊桥，B 类 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">a_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 个廊桥，如果减小 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">a_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的值，A 类区间就要删除更多的区间，B 类区间会减少需要删除的区间（使得剩下的飞机都可以停廊桥）。但是因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">a_1,a_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 已经是最优解了，B 类区间减少的要删除的区间数量不大于 A 类区间要增加的区间数量。</p>
 <p>因此推测最后的答案呈单峰性质。考虑三分查找找到峰值。</p>
@@ -88,33 +91,33 @@
 <li>温度降到一定值以下截止。</li>
 </ul>
 <p>找到的向左的位置和向右的位置不能乱定。原则上，越到后面，我们会越趋近于正解，所以应该逐渐稳定下来。本着越来越稳定的原则，温度越低波动应该越小，因此一般以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>×</mo><mi>k</mi><mo>×</mo><mi>r</mi><mi>a</mi><mi>n</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">T\times k\times rand</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span></span></span></span> 为左右发展长度，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 是根据题目不同自行设定的，一般直接设为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>a</mi><mi>n</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">rand</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span></span></span></span> 是属于区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">(0,1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span> 的实数。</p>
-<p>关于给定了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">a_1,a_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 如何判断几个飞机，肯定不能再用线段树维护了，这样要么时间爆炸要么答案准确率爆炸。我们考虑对于每一个区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span> 会对时间轴产生两个贡献：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>。表示选择这个数这一段区间会多一个占用廊桥的区间。注意如果数量超过了，这个区间的贡献不能计算进时间轴。</p>
+<p>关于给定了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">a_1,a_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 如何判断几个飞机，肯定不能再用线段树维护了，这样要么时间爆炸要么答案准确率爆炸。我们考虑对于每一个区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span> 会对时间轴产生两个贡献：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>（也就是区间和用差分维护了）。表示选择这个数这一段区间会多一个占用廊桥的区间。注意如果数量超过了给它分配的廊桥数，这个区间的贡献不能计算进时间轴。</p>
 <p>冥间数据 AC 代码：</p>
 <pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
 #define int long long
 using namespace std;
 const int max_n=100005;
 inline int read(){
-    int x=0;bool w=0;char c=getchar();
-    while(c&lt;'0' || c&gt;'9') w|=c=='-',c=getchar();
-    while(c&gt;='0' &amp;&amp; c&lt;='9') x=(x&lt;&lt;1)+(x&lt;&lt;3)+(c^48),c=getchar();
-    return w?-x:x;
+   int x=0;bool w=0;char c=getchar();
+   while(c&lt;'0' || c&gt;'9') w|=c=='-',c=getchar();
+   while(c&gt;='0' &amp;&amp; c&lt;='9') x=(x&lt;&lt;1)+(x&lt;&lt;3)+(c^48),c=getchar();
+   return w?-x:x;
 }
 inline void write(int x){
-    if(x&lt;0) x=-x,putchar('-');
-    if(x&gt;9) write(x/10);
-    putchar(x%10^48);
+   if(x&lt;0) x=-x,putchar('-');
+   if(x&gt;9) write(x/10);
+   putchar(x%10^48);
 }
 
 int n,m1,m2,q1[max_n*4],q2[max_n*4];
 struct plane{
-    int l,r;
-    inline void init(int x,int y){
-        l=x,r=y;
-    }
+   int l,r;
+   inline void init(int x,int y){
+       l=x,r=y;
+   }
 }a[max_n],b[max_n];
 inline bool cmp(plane a,plane b){ // 左端点排序
-    return a.l&lt;b.l;
+   return a.l&lt;b.l;
 }
 
 int lisan[max_n*4],cntls;
@@ -127,28 +130,28 @@ int In[max_n],a1[max_n*4],a2[max_n*4],ar[max_n],br[max_n];
 // ar：国内每个时间点如果有飞机进来，记录其出去的时间
 // a2，br 同理，是针对国际飞机的
 inline int check(int in){ // O(n) 判断几个飞机停桥
-	if(In[in]) return In[in]; // 记忆化
-	int out=n-in,res=0,tmp=0;
-	for(register int i=1;i&lt;=R1;++i) // 因为有修改飞机贡献所以要备份
-		a1[i]=q1[i];
-	for(register int i=1;i&lt;=R2;++i)
-		a2[i]=q2[i];
-	for(register int i=1;i&lt;=R1;++i){// 国内
-		if(a1[i]==1 &amp;&amp; tmp&lt;in) // 可以停进去
-			++res;
-		else if(a1[i]==1) // 停不进去要撤销飞机贡献
-			a1[i]=a1[ar[i]]=0;
-		tmp+=a1[i];
-	}
-	tmp=0;
-	for(register int i=1;i&lt;=R2;++i){// 国际，同理
-		if(a2[i]==1 &amp;&amp; tmp&lt;out)
-			++res;
-		else if(a2[i]==1)
-			a2[i]=a2[br[i]]=0;
-		tmp+=a2[i];
-	}
-	return In[in]=res;
+   if(In[in]) return In[in]; // 记忆化
+   int out=n-in,res=0,tmp=0;
+   for(register int i=1;i&lt;=R1;++i) // 因为有修改飞机贡献所以要备份
+   	a1[i]=q1[i];
+   for(register int i=1;i&lt;=R2;++i)
+   	a2[i]=q2[i];
+   for(register int i=1;i&lt;=R1;++i){// 国内
+   	if(a1[i]==1 &amp;&amp; tmp&lt;in) // 可以停进去
+   		++res;
+   	else if(a1[i]==1) // 停不进去要撤销飞机贡献
+   		a1[i]=a1[ar[i]]=0;
+   	tmp+=a1[i];
+   }
+   tmp=0;
+   for(register int i=1;i&lt;=R2;++i){// 国际，同理
+   	if(a2[i]==1 &amp;&amp; tmp&lt;out)
+   		++res;
+   	else if(a2[i]==1)
+   		a2[i]=a2[br[i]]=0;
+   	tmp+=a2[i];
+   }
+   return In[in]=res;
 }
 
 int As[max_n];
@@ -156,79 +159,79 @@ const int tim=3;
 const double tem=1145.141919810,delta=0.987654321,eps=1e-15;
 // 随便怎么调参都能过冥间数据
 inline void findans(){ // 模拟退火
-	int anss=ans,nowanss=nowans;
-	double nowt=tem;
-	while(nowt&gt;eps){
-		int len=1.0*nowt*n*rand()/RAND_MAX,L=nowanss-len,R=nowanss+len;
-        // 找到一个左端点和右端点
-		if(L&gt;=0){
-			int tmp=check(L);
-			if(tmp&gt;anss){ // 更新当前答案
-				anss=tmp,
-				nowanss=L;
-				if(ans&lt;anss){ // 更新全局答案
-					ans=anss,
-					nowans=nowanss;
-				}
-			}
-		}
-		if(R&lt;=n){
-			int tmp=check(R);
-			if(tmp&gt;anss){
-				anss=tmp,
-				nowanss=R;
-				if(ans&lt;anss){
-					ans=anss,
-					nowans=nowanss;
-				}
-			}
-		}
-		nowt*=delta;
-	}
-	if(ans&lt;anss){
-		ans=anss,
-		nowans=nowanss;
-	}
+   int anss=ans,nowanss=nowans;
+   double nowt=tem;
+   while(nowt&gt;eps){
+   	int len=1.0*nowt*n*rand()/RAND_MAX,L=nowanss-len,R=nowanss+len;
+       // 找到一个左端点和右端点
+   	if(L&gt;=0){
+   		int tmp=check(L);
+   		if(tmp&gt;anss){ // 更新当前答案
+   			anss=tmp,
+   			nowanss=L;
+   			if(ans&lt;anss){ // 更新全局答案
+   				ans=anss,
+   				nowans=nowanss;
+   			}
+   		}
+   	}
+   	if(R&lt;=n){
+   		int tmp=check(R);
+   		if(tmp&gt;anss){
+   			anss=tmp,
+   			nowanss=R;
+   			if(ans&lt;anss){
+   				ans=anss,
+   				nowans=nowanss;
+   			}
+   		}
+   	}
+   	nowt*=delta;
+   }
+   if(ans&lt;anss){
+   	ans=anss,
+   	nowans=nowanss;
+   }
 }
 
 signed main(){
-    n=read(),m1=read(),m2=read();
-    for(register int i=1;i&lt;=m1;++i){
-        int l=read(),r=read();
-        a[i].init(l,r);
-        lisan[++cntls]=l, // lisan 是离散化
-        lisan[++cntls]=r;
-    }
-    sort(lisan+1,lisan+1+cntls),R1=cntls;
-    for(register int i=1;i&lt;=m1;++i){
-        a[i].l=lower_bound(lisan+1,lisan+1+cntls,a[i].l)-lisan;
-        a[i].r=lower_bound(lisan+1,lisan+1+cntls,a[i].r)-lisan;
-        q1[a[i].l]=1,q1[a[i].r]=-1; // 统计飞机贡献
-        ar[a[i].l]=a[i].r;
-    }
-    cntls=0;
-    for(register int i=1;i&lt;=m2;++i){ // 国际部同理
-        int l=read(),r=read();
-        b[i].init(l,r);
-        lisan[++cntls]=l,
-        lisan[++cntls]=r;
-    }
-    sort(lisan+1,lisan+1+cntls),R2=cntls;
-    for(register int i=1;i&lt;=m2;++i){
-        b[i].l=lower_bound(lisan+1,lisan+1+cntls,b[i].l)-lisan;
-        b[i].r=lower_bound(lisan+1,lisan+1+cntls,b[i].r)-lisan;
-        q2[b[i].l]=1,q2[b[i].r]=-1;
-        br[b[i].l]=b[i].r;
-    }
+   n=read(),m1=read(),m2=read();
+   for(register int i=1;i&lt;=m1;++i){
+       int l=read(),r=read();
+       a[i].init(l,r);
+       lisan[++cntls]=l, // lisan 是离散化
+       lisan[++cntls]=r;
+   }
+   sort(lisan+1,lisan+1+cntls),R1=cntls;
+   for(register int i=1;i&lt;=m1;++i){
+       a[i].l=lower_bound(lisan+1,lisan+1+cntls,a[i].l)-lisan;
+       a[i].r=lower_bound(lisan+1,lisan+1+cntls,a[i].r)-lisan;
+       q1[a[i].l]=1,q1[a[i].r]=-1; // 统计飞机贡献
+       ar[a[i].l]=a[i].r;
+   }
+   cntls=0;
+   for(register int i=1;i&lt;=m2;++i){ // 国际部同理
+       int l=read(),r=read();
+       b[i].init(l,r);
+       lisan[++cntls]=l,
+       lisan[++cntls]=r;
+   }
+   sort(lisan+1,lisan+1+cntls),R2=cntls;
+   for(register int i=1;i&lt;=m2;++i){
+       b[i].l=lower_bound(lisan+1,lisan+1+cntls,b[i].l)-lisan;
+       b[i].r=lower_bound(lisan+1,lisan+1+cntls,b[i].r)-lisan;
+       q2[b[i].l]=1,q2[b[i].r]=-1;
+       br[b[i].l]=b[i].r;
+   }
 
-    sort(a+1,a+1+m1,cmp), // 别忘记 sort
-    sort(b+1,b+1+m2,cmp);
+   sort(a+1,a+1+m1,cmp), // 别忘记 sort
+   sort(b+1,b+1+m2,cmp);
 
-	ans=check(n/2),nowans=n/2;
-	while(clock()&lt;CLOCKS_PER_SEC*0.8)
-		findans();
-    write(ans);
-    return 0;
+   ans=check(n/2),nowans=n/2;
+   while(clock()&lt;CLOCKS_PER_SEC*0.8)
+   	findans();
+   write(ans);
+   return 0;
 }
 </code></pre>
 <h3 id="再改题解法真正的正解">再改题解法（真正的正解）</h3>
@@ -238,14 +241,16 @@ signed main(){
 <p>现在就只有唯一的一个问题：对于一个类（不妨假设为 A 类，因为 B 类部分做法和 A 类完全一致），的每一个飞机，我要给这个类多少廊桥，使得这个飞机可以进廊桥。</p>
 <p>不妨画一个图，下面的区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi><mo separator="true">,</mo><mi>d</mi><mo separator="true">,</mo><mi>e</mi><mo separator="true">,</mo><mi>f</mi><mo separator="true">,</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">a,b,c,d,e,f,g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 都属于 A 类飞机对应的区间，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 轴表示时间轴：</p>
 <figure data-type="image" tabindex="1"><img src="https://pic.imgdb.cn/item/617660b72ab3f51d91e92af8.png" alt="" loading="lazy"></figure>
-<p>第一个进场的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 区间需要分配一个廊桥，记廊桥编号为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。<br>
-第二个进场的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 区间，因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 号廊桥还在被 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 占用，所以要开一个廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>。<br>
-随后 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span> 区间进场，虽然廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 被 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 占用了，但是廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 已经用完飞走了，就没必要建新廊桥了，可以直接使用廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。<br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 区间进场，廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1,2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span></span></span></span> 分别被 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">f,b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span></span></span></span> 占用，所以只能再建一个廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 给 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 用。<br>
-然后是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> 区间，廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">1,3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span></span></span></span> 被 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo separator="true">,</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">f,g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 占用，但是廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 已经走了，所以可以进廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>。 <br>
-轮到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">e</span></span></span></span> 进场的时候，我们发现廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1,2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span></span></span></span> 都可以使用，廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 被 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 占用。具体是选 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 还是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>，我们不妨从简而谈，选择编号更小的廊桥，方便直接通过廊桥编号求出至少几个廊桥可以让它停进来。因此我们给 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">e</span></span></span></span> 选择 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 号廊桥。<br>
-姗姗来迟的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span></span></span></span> 只有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 号廊桥一个选择。到此所有处理结束了。</p>
-<p>总结手算思路：</p>
+<ol>
+<li>第一个进场的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 区间需要分配一个廊桥，记廊桥编号为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</li>
+<li>第二个进场的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 区间，因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 号廊桥还在被 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 占用，所以要开一个廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>。</li>
+<li>随后 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span> 区间进场，虽然廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 被 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 占用了，但是廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 已经用完飞走了，就没必要建新廊桥了，可以直接使用廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 区间进场，廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1,2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span></span></span></span> 分别被 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">f,b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span></span></span></span> 占用，所以只能再建一个廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 给 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 用。</li>
+<li>然后是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> 区间，廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">1,3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span></span></span></span> 被 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo separator="true">,</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">f,g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 占用，但是廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 已经走了，所以可以进廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>。</li>
+<li>轮到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">e</span></span></span></span> 进场的时候，我们发现廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1,2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span></span></span></span> 都可以使用，廊桥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 被 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 占用。具体是选 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 还是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>，我们不妨从简而谈，选择编号更小的廊桥，方便直接通过廊桥编号求出至少几个廊桥可以让它停进来。因此我们给 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">e</span></span></span></span> 选择 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 号廊桥。</li>
+<li>姗姗来迟的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span></span></span></span> 只有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 号廊桥一个选择。到此所有处理结束了。</li>
+</ol>
+<p>总结手玩数据思路：</p>
 <ul>
 <li>对于一个区间开始的时候，先判断是否所有的廊桥已经被占用。</li>
 <li>如果所有廊桥已经被占用，新开一个廊桥给它。</li>
@@ -256,142 +261,142 @@ signed main(){
 using namespace std;
 const int max_n=100005,inf=2100000000;
 inline int read(){
-    int x=0;bool w=0;char c=getchar();
-    while(c&lt;'0' || c&gt;'9') w|=c=='-',c=getchar();
-    while(c&gt;='0' &amp;&amp; c&lt;='9') x=(x&lt;&lt;1)+(x&lt;&lt;3)+(c^48),c=getchar();
-    return w?-x:x;
+   int x=0;bool w=0;char c=getchar();
+   while(c&lt;'0' || c&gt;'9') w|=c=='-',c=getchar();
+   while(c&gt;='0' &amp;&amp; c&lt;='9') x=(x&lt;&lt;1)+(x&lt;&lt;3)+(c^48),c=getchar();
+   return w?-x:x;
 }
 inline void write(int x){
-    if(x&lt;0) x=-x,putchar('-');
-    if(x&gt;9) write(x/10);
-    putchar(x%10^48);
+   if(x&lt;0) x=-x,putchar('-');
+   if(x&gt;9) write(x/10);
+   putchar(x%10^48);
 }
 
 int lisan[max_n*4],cntls,R1,R2;
 
 int n,m1,m2;
 struct plane{
-    int l,r;
-    inline void init(int x,int y){
-        l=x,r=y;
-    }
+   int l,r;
+   inline void init(int x,int y){
+       l=x,r=y;
+   }
 }a[max_n],b[max_n];
 inline bool cmp(plane a,plane b){
-    return a.l&lt;b.l;
+   return a.l&lt;b.l;
 }
 
 struct segment_tree{ // 下标为时间，值为可用廊桥编号最小值
-	int L[max_n*8],R[max_n*8];
-	int mn[max_n*8];
+   int L[max_n*8],R[max_n*8];
+   int mn[max_n*8];
 
-	#define ls(x) (x&lt;&lt;1)
-	#define rs(x) (x&lt;&lt;1|1)
+   #define ls(x) (x&lt;&lt;1)
+   #define rs(x) (x&lt;&lt;1|1)
 
-	inline void pushup(int x){
-		mn[x]=min(mn[ls(x)],mn[rs(x)]);
-	}
-	inline void build(int x,int l,int r){ // 清空线段树
-		L[x]=l,R[x]=r,mn[x]=inf;
-		if(l==r) return;
-		int mid=(l+r)&gt;&gt;1;
-		build(ls(x),l,mid),
-		build(rs(x),mid+1,r);
-		pushup(x);
-	}
-	inline void upd(int x,int pos,int val){ // 单点赋值
-		if(L[x]==pos &amp;&amp; R[x]==pos){
-			mn[x]=val;
-			return;
-		}
-		int mid=(L[x]+R[x])&gt;&gt;1;
-		if(pos&lt;=mid) upd(ls(x),pos,val);
-		else upd(rs(x),pos,val);
-		pushup(x);
-	}
-	inline int ask(int x,int l,int r){ // 区间查询最小值
-		if(l&lt;=L[x] &amp;&amp; R[x]&lt;=r) return mn[x];
-		int mid=(L[x]+R[x])&gt;&gt;1,res=inf;
-		if(l&lt;=mid) res=min(res,ask(ls(x),l,r));
-		if(r&gt;mid) res=min(res,ask(rs(x),l,r));
-		pushup(x);
-		return res;
-	}
+   inline void pushup(int x){
+   	mn[x]=min(mn[ls(x)],mn[rs(x)]);
+   }
+   inline void build(int x,int l,int r){ // 清空线段树
+   	L[x]=l,R[x]=r,mn[x]=inf;
+   	if(l==r) return;
+   	int mid=(l+r)&gt;&gt;1;
+   	build(ls(x),l,mid),
+   	build(rs(x),mid+1,r);
+   	pushup(x);
+   }
+   inline void upd(int x,int pos,int val){ // 单点赋值
+   	if(L[x]==pos &amp;&amp; R[x]==pos){
+   		mn[x]=val;
+   		return;
+   	}
+   	int mid=(L[x]+R[x])&gt;&gt;1;
+   	if(pos&lt;=mid) upd(ls(x),pos,val);
+   	else upd(rs(x),pos,val);
+   	pushup(x);
+   }
+   inline int ask(int x,int l,int r){ // 区间查询最小值
+   	if(l&lt;=L[x] &amp;&amp; R[x]&lt;=r) return mn[x];
+   	int mid=(L[x]+R[x])&gt;&gt;1,res=inf;
+   	if(l&lt;=mid) res=min(res,ask(ls(x),l,r));
+   	if(r&gt;mid) res=min(res,ask(rs(x),l,r));
+   	pushup(x);
+   	return res;
+   }
 }seg;
 
 int ls[max_n],id[max_n]; // id-&gt;廊桥编号 ls-&gt;这个廊桥的上一个使用者
 int f1[max_n],f2[max_n];// f1-&gt; A 类区间给 i 个廊桥，有 f1[i] 个飞机可以，f2 同理
 
 inline void sol1(){ // 处理 A 类区间
-	int cnt=0; // 目前有几个廊桥
-	seg.build(1,1,R1);
-	for(register int i=1;i&lt;=m1;++i){
-		int l=a[i].l,r=a[i].r;
-		int ask=seg.ask(1,1,l);
-		if(ask==inf){ // 没有没被占用的廊桥
-			id[i]=++cnt,ls[cnt]=r;
-			seg.upd(1,r,cnt);
-		}
-		else{
-			id[i]=ask,seg.upd(1,ls[ask],inf); // 清空上个主人在这个廊桥的信息
-			ls[ask]=r,seg.upd(1,r,ask);// 占用这个廊桥
-		}
-	}
-	for(register int i=1;i&lt;=m1;++i) ++f1[id[i]];
-	for(register int i=1;i&lt;=m1;++i) f1[i]+=f1[i-1];
+   int cnt=0; // 目前有几个廊桥
+   seg.build(1,1,R1);
+   for(register int i=1;i&lt;=m1;++i){
+   	int l=a[i].l,r=a[i].r;
+   	int ask=seg.ask(1,1,l);
+   	if(ask==inf){ // 没有没被占用的廊桥
+   		id[i]=++cnt,ls[cnt]=r;
+   		seg.upd(1,r,cnt);
+   	}
+   	else{
+   		id[i]=ask,seg.upd(1,ls[ask],inf); // 清空上个主人在这个廊桥的信息
+   		ls[ask]=r,seg.upd(1,r,ask);// 占用这个廊桥
+   	}
+   }
+   for(register int i=1;i&lt;=m1;++i) ++f1[id[i]];
+   for(register int i=1;i&lt;=m1;++i) f1[i]+=f1[i-1];
 }
 inline void sol2(){ // 处理 B 类，同理
-	int cnt=0;
-	memset(ls,0,sizeof(ls));
-	seg.build(1,1,R2);
-	for(register int i=1;i&lt;=m2;++i){
-		int l=b[i].l,r=b[i].r;
-		int ask=seg.ask(1,1,l);
-		if(ask==inf){
-			id[i]=++cnt,ls[cnt]=r;
-			seg.upd(1,r,cnt);
-		}
-		else{
-			id[i]=ask,seg.upd(1,ls[ask],inf);
-			ls[ask]=r,seg.upd(1,r,ask);
-		}
-	}
-	for(register int i=1;i&lt;=m2;++i) ++f2[id[i]];
-	for(register int i=1;i&lt;=m2;++i)	f2[i]+=f2[i-1];
+   int cnt=0;
+   memset(ls,0,sizeof(ls));
+   seg.build(1,1,R2);
+   for(register int i=1;i&lt;=m2;++i){
+   	int l=b[i].l,r=b[i].r;
+   	int ask=seg.ask(1,1,l);
+   	if(ask==inf){
+   		id[i]=++cnt,ls[cnt]=r;
+   		seg.upd(1,r,cnt);
+   	}
+   	else{
+   		id[i]=ask,seg.upd(1,ls[ask],inf);
+   		ls[ask]=r,seg.upd(1,r,ask);
+   	}
+   }
+   for(register int i=1;i&lt;=m2;++i) ++f2[id[i]];
+   for(register int i=1;i&lt;=m2;++i)	f2[i]+=f2[i-1];
 }
 
 signed main(){
-    n=read(),m1=read(),m2=read();
-    for(register int i=1;i&lt;=m1;++i){
-    	int l=read(),r=read();
-		a[i].init(l,r);
-		lisan[++cntls]=l,lisan[++cntls]=r;
-	}
-	sort(lisan+1,lisan+1+cntls),R1=cntls; // 熟悉的离散化
-	for(register int i=1;i&lt;=m1;++i){
-		a[i].l=lower_bound(lisan+1,lisan+1+cntls,a[i].l)-lisan;
-		a[i].r=lower_bound(lisan+1,lisan+1+cntls,a[i].r)-lisan;
-	}
-	cntls=0;
-	for(register int i=1;i&lt;=m2;++i){
-		int l=read(),r=read();
-		b[i].init(l,r);
-		lisan[++cntls]=l,lisan[++cntls]=r;
-	}
-	sort(lisan+1,lisan+1+cntls),R2=cntls;
-	for(register int i=1;i&lt;=m2;++i){
-		b[i].l=lower_bound(lisan+1,lisan+1+cntls,b[i].l)-lisan;
-		b[i].r=lower_bound(lisan+1,lisan+1+cntls,b[i].r)-lisan;
-	}
+   n=read(),m1=read(),m2=read();
+   for(register int i=1;i&lt;=m1;++i){
+   	int l=read(),r=read();
+   	a[i].init(l,r);
+   	lisan[++cntls]=l,lisan[++cntls]=r;
+   }
+   sort(lisan+1,lisan+1+cntls),R1=cntls; // 熟悉的离散化
+   for(register int i=1;i&lt;=m1;++i){
+   	a[i].l=lower_bound(lisan+1,lisan+1+cntls,a[i].l)-lisan;
+   	a[i].r=lower_bound(lisan+1,lisan+1+cntls,a[i].r)-lisan;
+   }
+   cntls=0;
+   for(register int i=1;i&lt;=m2;++i){
+   	int l=read(),r=read();
+   	b[i].init(l,r);
+   	lisan[++cntls]=l,lisan[++cntls]=r;
+   }
+   sort(lisan+1,lisan+1+cntls),R2=cntls;
+   for(register int i=1;i&lt;=m2;++i){
+   	b[i].l=lower_bound(lisan+1,lisan+1+cntls,b[i].l)-lisan;
+   	b[i].r=lower_bound(lisan+1,lisan+1+cntls,b[i].r)-lisan;
+   }
 
-	sort(a+1,a+1+m1,cmp),
-	sort(b+1,b+1+m2,cmp); // 记得要 sort
+   sort(a+1,a+1+m1,cmp),
+   sort(b+1,b+1+m2,cmp); // 记得要 sort
 
-	sol1(),sol2();
-	int ans=0;
-	for(register int i=0;i&lt;=n;++i)
-		ans=max(ans,f1[i]+f2[n-i]); // i 个给 A 类，n-i 个给 B 类
-	write(ans);
-	return 0;
+   sol1(),sol2();
+   int ans=0;
+   for(register int i=0;i&lt;=n;++i)
+   	ans=max(ans,f1[i]+f2[n-i]); // i 个给 A 类，n-i 个给 B 类
+   write(ans);
+   return 0;
 }
 </code></pre>
 ]]></content>
