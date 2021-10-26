@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-10-25T13:34:39.187Z</updated>
+    <updated>2021-10-26T00:57:33.291Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Walker68145.github.io"/>
     <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
@@ -85,12 +85,9 @@
 <li>设定每次温度的变化比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\Delta T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Δ</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span>。</li>
 <li>每次退火，找到一个向左的位置和向右的位置，求其函数值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">f</mi><mo>⁡</mo><mo>(</mo><mi>x</mi><mo>)</mo><mo separator="true">,</mo><mi mathvariant="normal">f</mi><mo>⁡</mo><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\operatorname{f}(x),\operatorname{f}(y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mord mathrm" style="margin-right:0.07778em;">f</span></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm" style="margin-right:0.07778em;">f</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>。</li>
 <li>如果一端比当前状态小的话，贪心地跳过去。</li>
-<li>如果比当前状态大，我们有一定的概率跳过去。</li>
 <li>温度降到一定值以下截止。</li>
 </ul>
-<p>找到的向左的位置和向右的位置、以及跳上去的概率不能乱定。原则上，越到后面，我们会越趋近于正解，所以应该逐渐稳定下来。根据热力学物理学家们的研究，增量的概率最好为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>exp</mi><mo>⁡</mo><mo>(</mo><mfrac><mi>x</mi><mi>T</mi></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">\exp(\frac{x}{T})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.095em;vertical-align:-0.345em;"></span><span class="mop">exp</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 是当前解与当前目标解之差。</p>
-<p>本着越来越稳定的原则，温度越低波动应该越小，因此一般以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>×</mo><mi>k</mi><mo>×</mo><mi>r</mi><mi>a</mi><mi>n</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">T\times k\times rand</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span></span></span></span> 为左右发展长度，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 是根据题目不同自行设定的，一般直接设为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>a</mi><mi>n</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">rand</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span></span></span></span> 是属于区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">(0,1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span> 的实数。</p>
-<p>在本题中，因为洛谷数据较水，并不需要特别在意跳到劣解的概率，写好波动范围即可。</p>
+<p>找到的向左的位置和向右的位置不能乱定。原则上，越到后面，我们会越趋近于正解，所以应该逐渐稳定下来。本着越来越稳定的原则，温度越低波动应该越小，因此一般以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>×</mo><mi>k</mi><mo>×</mo><mi>r</mi><mi>a</mi><mi>n</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">T\times k\times rand</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span></span></span></span> 为左右发展长度，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 是根据题目不同自行设定的，一般直接设为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>a</mi><mi>n</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">rand</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span></span></span></span> 是属于区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">(0,1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span> 的实数。</p>
 <p>关于给定了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">a_1,a_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 如何判断几个飞机，肯定不能再用线段树维护了，这样要么时间爆炸要么答案准确率爆炸。我们考虑对于每一个区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span> 会对时间轴产生两个贡献：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>。表示选择这个数这一段区间会多一个占用廊桥的区间。注意如果数量超过了，这个区间的贡献不能计算进时间轴。</p>
 <p>冥间数据 AC 代码：</p>
 <pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
@@ -116,7 +113,7 @@ struct plane{
         l=x,r=y;
     }
 }a[max_n],b[max_n];
-inline bool cmp(plane a,plane b){
+inline bool cmp(plane a,plane b){ // 左端点排序
     return a.l&lt;b.l;
 }
 
@@ -125,23 +122,26 @@ int lisan[max_n*4],cntls;
 int ans,nowans,R1,R2;
 
 int In[max_n],a1[max_n*4],a2[max_n*4],ar[max_n],br[max_n];
-
-inline int check(int in){ // O(n) 判断多少个飞机停桥
-	if(In[in]) return In[in];
+// a1：国内飞机的差分贡献（左端点 +1 右端点 -1）
+// In：记忆化
+// ar：国内每个时间点如果有飞机进来，记录其出去的时间
+// a2，br 同理，是针对国际飞机的
+inline int check(int in){ // O(n) 判断几个飞机停桥
+	if(In[in]) return In[in]; // 记忆化
 	int out=n-in,res=0,tmp=0;
-	for(register int i=1;i&lt;=R1;++i)
+	for(register int i=1;i&lt;=R1;++i) // 因为有修改飞机贡献所以要备份
 		a1[i]=q1[i];
 	for(register int i=1;i&lt;=R2;++i)
 		a2[i]=q2[i];
-	for(register int i=1;i&lt;=R1;++i){
-		if(a1[i]==1 &amp;&amp; tmp&lt;in) // 可以进廊桥
+	for(register int i=1;i&lt;=R1;++i){// 国内
+		if(a1[i]==1 &amp;&amp; tmp&lt;in) // 可以停进去
 			++res;
-		else if(a1[i]==1) // 满员了，区间贡献不记入时间轴
+		else if(a1[i]==1) // 停不进去要撤销飞机贡献
 			a1[i]=a1[ar[i]]=0;
 		tmp+=a1[i];
 	}
 	tmp=0;
-	for(register int i=1;i&lt;=R2;++i){ // 国际航班同理
+	for(register int i=1;i&lt;=R2;++i){// 国际，同理
 		if(a2[i]==1 &amp;&amp; tmp&lt;out)
 			++res;
 		else if(a2[i]==1)
@@ -152,27 +152,27 @@ inline int check(int in){ // O(n) 判断多少个飞机停桥
 }
 
 int As[max_n];
-const int tim=1;
-const double tem=0.98,delta=0.98,eps=0.0001;
-
+const int tim=3;
+const double tem=1145.141919810,delta=0.987654321,eps=1e-15;
+// 随便怎么调参都能过冥间数据
 inline void findans(){ // 模拟退火
-	// anss 这次退火答案，ans 全局答案，nowans 现在答案的位置
 	int anss=ans,nowanss=nowans;
 	double nowt=tem;
-	while(nowt&gt;eps){ // nowt 表示温度
+	while(nowt&gt;eps){
 		int len=1.0*nowt*n*rand()/RAND_MAX,L=nowanss-len,R=nowanss+len;
-		if(L&gt;=0){ // 简单写法，判断左右
+        // 找到一个左端点和右端点
+		if(L&gt;=0){
 			int tmp=check(L);
-			if(tmp&gt;anss){
+			if(tmp&gt;anss){ // 更新当前答案
 				anss=tmp,
 				nowanss=L;
-				if(ans&lt;anss){ // 没有判断更劣情况
+				if(ans&lt;anss){ // 更新全局答案
 					ans=anss,
 					nowans=nowanss;
 				}
 			}
 		}
-		if(R&lt;=n){ // 右端点同理
+		if(R&lt;=n){
 			int tmp=check(R);
 			if(tmp&gt;anss){
 				anss=tmp,
@@ -185,7 +185,7 @@ inline void findans(){ // 模拟退火
 		}
 		nowt*=delta;
 	}
-	if(ans&lt;anss){ // 更新全局答案
+	if(ans&lt;anss){
 		ans=anss,
 		nowans=nowanss;
 	}
@@ -196,18 +196,18 @@ signed main(){
     for(register int i=1;i&lt;=m1;++i){
         int l=read(),r=read();
         a[i].init(l,r);
-        lisan[++cntls]=l,
+        lisan[++cntls]=l, // lisan 是离散化
         lisan[++cntls]=r;
     }
-    sort(lisan+1,lisan+1+cntls),R1=cntls; // 离散化
+    sort(lisan+1,lisan+1+cntls),R1=cntls;
     for(register int i=1;i&lt;=m1;++i){
         a[i].l=lower_bound(lisan+1,lisan+1+cntls,a[i].l)-lisan;
         a[i].r=lower_bound(lisan+1,lisan+1+cntls,a[i].r)-lisan;
-        q1[a[i].l]=1,q1[a[i].r]=-1;
-        ar[a[i].l]=a[i].r; // 每个开始位置对应的结束位置
+        q1[a[i].l]=1,q1[a[i].r]=-1; // 统计飞机贡献
+        ar[a[i].l]=a[i].r;
     }
     cntls=0;
-    for(register int i=1;i&lt;=m2;++i){
+    for(register int i=1;i&lt;=m2;++i){ // 国际部同理
         int l=read(),r=read();
         b[i].init(l,r);
         lisan[++cntls]=l,
@@ -221,11 +221,11 @@ signed main(){
         br[b[i].l]=b[i].r;
     }
 
-    sort(a+1,a+1+m1,cmp), // 记得排序
+    sort(a+1,a+1+m1,cmp), // 别忘记 sort
     sort(b+1,b+1+m2,cmp);
 
 	ans=check(n/2),nowans=n/2;
-	for(register int i=1;i&lt;=tim;++i)
+	while(clock()&lt;CLOCKS_PER_SEC*0.8)
 		findans();
     write(ans);
     return 0;
