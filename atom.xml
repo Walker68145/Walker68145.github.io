@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-10-29T12:22:33.372Z</updated>
+    <updated>2021-10-31T05:41:08.365Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Walker68145.github.io"/>
     <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
@@ -529,10 +529,7 @@ signed main(){
 （摘自：<a href="https://baike.baidu.com/item/%E5%A4%9A%E9%A1%B9%E5%BC%8F/10660961?fr=aladdin">百度百科</a>）</p>
 </blockquote>
 <p>多项式的定义初中就有，没必要多说吧。本文将会积累所有学了的有关多项式的知识，不定期更新内容。</p>
-<ul>
-<li>本博客全文所有内容均不属于提高组考试范围，你要是硬说多项式加法可能有……那我也不能反驳。</li>
-<li>本博客没有代码！没有完整的代码！没有任何完整的代码！</li>
-</ul>
+<p>本博客全文所有内容均不属于提高组考试范围，你要是硬说多项式加法可能有……那我也不能反驳。</p>
 <h2 id="多项式求和单项式乘多项式">多项式求和，单项式乘多项式</h2>
 <p><strong>合并同类项</strong>，没必要多说吧。多项式求差同理。</p>
 <p>单项式乘多项式就拆个括号。</p>
@@ -949,6 +946,184 @@ B_1\equiv 2B_2-AB_2^2\equiv 0\pmod{x^n}
 <p>也就是说，对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>∗</mo><msub><mi>B</mi><mn>1</mn></msub><mo>≡</mo><mn>1</mn><mspace></mspace><mspace width="0.4444444444444444em"/><mo>(</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mspace width="0.3333333333333333em"/><msup><mi>x</mi><mi>n</mi></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">A\ast B_1\equiv 1\pmod{x^n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.4444444444444444em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.3333333333333333em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">B_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，可以通过求出使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>∗</mo><msub><mi>B</mi><mn>2</mn></msub><mo>≡</mo><mn>1</mn><mspace></mspace><mspace width="0.4444444444444444em"/><mo>(</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mspace width="0.3333333333333333em"/><msup><mi>x</mi><mrow><mo fence="true">⌈</mo><mfrac><mi>n</mi><mn>2</mn></mfrac><mo fence="true">⌉</mo></mrow></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">A\ast B_2\equiv 1\pmod{x^{\left\lceil\frac{n}{2}\right\rceil}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.4444444444444444em;"></span></span><span class="base"><span class="strut" style="height:1.35775em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.3333333333333333em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.10775em;"><span style="top:-3.4102500000000004em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="minner mtight"><span class="mopen sizing reset-size3 size6 mtight delimcenter" style="top:0.07500000000000001em;"><span class="mtight">⌈</span></span><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6915428571428572em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span><span class="mclose sizing reset-size3 size6 mtight delimcenter" style="top:0.07500000000000001em;"><span class="mtight">⌉</span></span></span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">B_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，然后加上多项式乘法来求。</p>
 <p>从上往下递归的常数传参要传多项式，非常恶心，不如直接从下往上递推，从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">x^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span> 推到第一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><msup><mn>2</mn><mi>k</mi></msup></msup></mrow><annotation encoding="application/x-tex">x^{2^k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.01192em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.01192em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9270285714285713em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>，满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup><mo>⩾</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2^k\geqslant n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.985778em;vertical-align:-0.13667em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩾</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 就行了。</p>
 <p>支撑主体的是 NTT 求逆，还用到了倍增。整体的复杂度是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span></span></span></span>。</p>
+<h2 id="代码">代码</h2>
+<p>多项式 FFT，NTT，MTT，求逆代码：</p>
+<pre><code class="language-cpp">namespace DXS{ // 封装
+	inline int mi(int x,int p){ // 快速幂
+		int res=1;
+		while(p){
+			if(p&amp;1) res*=x,res%=mod;
+			x*=x,x%=mod,p&gt;&gt;=1;
+		}
+		return res;
+	}
+	struct com{ // 手写复数结构体，支持 +-* 三种运算
+		double a,b; // a+bi
+		com(double x=0,double y=0){a=x,b=y;}
+		com operator + (const com b) const{
+			com a=*this,res;
+			res.a=a.a+b.a,res.b=a.b+b.b;
+			return res;
+		}
+		com operator - (const com b) const{
+			com a=*this,res;
+			res.a=a.a-b.a,res.b=a.b-b.b;
+			return res;
+		}
+		com operator * (const com b) const{
+			com a=*this,res;
+			res.a=a.a*b.a-a.b*b.b,
+			res.b=a.a*b.b+a.b*b.a;
+			return res;
+		}
+	};
+
+	int rev[max_n*2]; // 蝴蝶变换
+	const int mod=998244353,G=3,IG=332748118; // NTT 模数，原根和原根的逆元
+	const double Pi=acos(-1.0); // 圆周率，计算单位根用
+
+	inline void NTT(int *g,int n,bool op){ // 传入数组 g，op=1 表示转点值，0 表示转系数
+		for(register int i=0;i&lt;n;++i) if(i&lt;rev[i])
+			swap(g[i],g[rev[i]]);
+		for(register int mid=1;mid&lt;n;mid&lt;&lt;=1LL){
+			int omega=mi(op?G:IG,(mod-1)/(mid+mid));
+			for(register int i=0;i&lt;n;i+=mid+mid){
+				int w=1;
+				for(register int j=0;j&lt;mid;++j,w=(w*omega)%mod){
+					int x=g[i+j],y=w*g[i+j+mid]%mod;
+					g[i+j]=(x+y)%mod,
+					g[i+j+mid]=(x-y+mod)%mod;
+				}
+			}
+		}
+		if(!op){
+			int iv=mi(n,mod-2);
+			for(register int i=0;i&lt;n;++i)
+				g[i]=g[i]*iv%mod;
+		}
+	}
+	inline void FFT(com *g,int n,bool op){ // 传入数组 g，op=1 表示转点值，0 表示转系数
+		for(register int i=0;i&lt;n;++i) if(i&lt;rev[i])
+			swap(g[i],g[rev[i]]);
+		for(register int mid=1;mid&lt;n;mid&lt;&lt;=1LL){
+			com omega(cos(Pi/mid),sin(Pi/mid)*(op?1:-1));
+			for(register int i=0;i&lt;n;i+=mid+mid){
+				com w(1,0);
+				for(register int j=0;j&lt;mid;++j,w=w*omega){
+					com x=g[i+j],y=w*g[i+j+mid];
+					g[i+j]=x+y,
+					g[i+j+mid]=x-y;
+				}
+			}
+		}
+	}
+	inline void mulNTT(int *f,int *g,int n,int m){ // 传入系数表示数组 f,g，计算 f=f*g
+		int len=1;
+		while(len&lt;n+m) len&lt;&lt;=1LL;
+		for(register int i=0;i&lt;len;++i)
+			rev[i]=(rev[i&gt;&gt;1]&gt;&gt;1)|((i&amp;1)?len&gt;&gt;1:0);
+		NTT(f,len,1),NTT(g,len,1);
+		for(register int i=0;i&lt;len;++i)
+			f[i]*=g[i],f[i]%=mod;
+		NTT(f,len,0);
+	}
+	inline void mulFFT(int *f,int *g,int n,int m){ // 传入系数表示数组 f,g，计算 f=f*g
+		static com F[max_n],G[max_n];
+		for(register int i=0;i&lt;n;++i)
+			F[i].a=f[i],F[i].b=0;
+		for(register int i=0;i&lt;m;++i)
+			G[i].a=g[i],G[i].b=0;
+		int len=1;
+		while(len&lt;n+m) len&lt;&lt;=1LL;
+		for(register int i=0;i&lt;len;++i)
+			rev[i]=(rev[i&gt;&gt;1]&gt;&gt;1)|((i&amp;1)?len&gt;&gt;1:0);
+		FFT(F,len,1),FFT(G,len,1);
+		for(register int i=0;i&lt;len;++i)
+			F[i]=F[i]*G[i];
+		FFT(F,len,0);
+		for(register int i=0;i&lt;len;++i)
+			f[i]=(int)(F[i].a/len+0.5);
+	}
+	const int K=32768,S=K*K;
+	inline void mulMTT(int *f,int *g,int n,int m,int mod){ // 传入系数表示数组 f,g，计算 f=f*g
+		static com P[max_n],Q[max_n],R[max_n];
+		memset(P,0,sizeof(P)),
+		memset(Q,0,sizeof(Q)),
+		memset(R,0,sizeof(R));
+		for(register int i=0;i&lt;n;++i){
+			P[i].a=f[i]/K,
+			P[i].b=f[i]%K;
+			R[i].a=f[i]/K,
+			R[i].b=-f[i]%K;
+		}
+		for(register int i=0;i&lt;m;++i){
+			Q[i].a=g[i]/K,
+			Q[i].b=g[i]%K;
+		}
+		int len=1;
+		while(len&lt;n+m) len&lt;&lt;=1LL;
+		for(register int i=0;i&lt;len;++i)
+			rev[i]=(rev[i&gt;&gt;1]&gt;&gt;1)|((i&amp;1)?len&gt;&gt;1:0);
+
+		FFT(P,len,1),FFT(Q,len,1),FFT(R,len,1);
+		for(register int i=0;i&lt;len;++i){
+			Q[i].a/=len,
+			Q[i].b/=len;
+		}
+		for(register int i=0;i&lt;len;++i){
+			P[i]=P[i]*Q[i],
+			R[i]=R[i]*Q[i];
+		}
+		FFT(P,len,0),FFT(R,len,0);
+		for(register int i=0,a1b1=0,a1b2=0,a2b1=0,a2b2=0;i&lt;len;++i){
+			a1b1=(int)floor((P[i].a+R[i].a)/2+0.5)%mod,
+			a1b2=(int)floor((P[i].b+R[i].b)/2+0.5)%mod,
+			a2b1=((int)floor(P[i].b+0.5)-a1b2)%mod,
+			a2b2=((int)floor(R[i].a+0.5)-a1b1)%mod;
+			f[i]=(a1b1*S%mod+(a1b2+a2b1)%mod*K%mod+a2b2)%mod;
+			while(f[i]&lt;0) f[i]+=mod;
+			f[i]%=mod;
+		}
+	}
+	inline void invNTT(int *f,int *g,int n){ // 用 NTT 计算逆元
+		if(n==1){
+			g[0]=mi(f[0],mod-2);
+			return;
+		}
+		invNTT(f,g,(n+1)&gt;&gt;1);
+		int len=1;
+		while(len&lt;n+n) len&lt;&lt;=1LL;
+		for(register int i=0;i&lt;len;++i)
+			rev[i]=(rev[i&gt;&gt;1]&gt;&gt;1)|((i&amp;1)?len&gt;&gt;1:0);
+		static int h[max_n];memset(h,0,sizeof(h));
+		for(register int i=0;i&lt;n;++i)
+			h[i]=f[i];
+		NTT(h,len,1),NTT(g,len,1);
+		for(register int i=0;i&lt;len;++i)
+			g[i]*=(2-h[i]*g[i]%mod+mod)%mod,
+			g[i]%=mod;
+		NTT(g,len,0);
+		for(register int i=n;i&lt;len;++i) g[i]=0;
+	}
+	inline void invMTT(int *f,int *g,int n,int mod){ // 用 MTT 计算逆元
+		if(n==1){
+			g[0]=mi(f[0],mod-2);
+			return;
+		}
+		invMTT(f,g,(n+1)&gt;&gt;1,mod);
+		int len=1;
+		while(len&lt;n+n) len&lt;&lt;=1LL;
+		static int h[max_n*2];memset(h,0,sizeof(h));
+		for(register int i=0;i&lt;len;++i)
+			h[i]=f[i];
+		mulMTT(h,g,n,n,mod),
+		mulMTT(h,g,n,n,mod);
+		for(register int i=0;i&lt;n;++i)
+			g[i]=(g[i]*2-h[i]+mod)%mod;
+		for(register int i=n;i&lt;len;++i) g[i]=0;
+	}
+}
+</code></pre>
 ]]></content>
     </entry>
     <entry>
