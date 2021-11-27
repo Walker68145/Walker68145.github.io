@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-11-27T10:08:49.599Z</updated>
+    <updated>2021-11-27T10:11:51.594Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="https://Walker68145.github.io"/>
+    <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
     <subtitle>qvq</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>https://Walker68145.github.io/images/avatar.png</logo>
+    <icon>https://Walker68145.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Arahc&apos;s blog</rights>
     <entry>
-        <title type="html"><![CDATA[替罪羊树与K-DTree]]></title>
-        <id>http://localhost:4000/post/ti-zui-yang-shu-yu-k-dtree/</id>
-        <link href="http://localhost:4000/post/ti-zui-yang-shu-yu-k-dtree/">
+        <title type="html"><![CDATA[替罪羊树与KD-Tree]]></title>
+        <id>https://Walker68145.github.io/post/ti-zui-yang-shu-yu-k-dtree/</id>
+        <link href="https://Walker68145.github.io/post/ti-zui-yang-shu-yu-k-dtree/">
         </link>
         <updated>2021-11-25T13:52:06.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前言">前言</h2>
 <p>替罪羊树是一种平衡树。对于平衡树的二叉搜索树性质，已经在<a href="https://walker68145.github.io/post/cong-er-cha-sou-suo-shu-dao-splay/">这个博客</a>比较详细地提到过了。那篇博客内，详细讲了的平衡树是 Splay。注意到 Splay 维护平衡的时候会直接通过旋转改变树的结构，在写平衡树套什么东西的时候，Splay 维护起来可能会有写吃力。因此这里重点写一下替罪羊树。</p>
-<p>K-D Tree 和替罪羊树维护树平衡的方法一样，因此也可以提出来讲讲。</p>
+<p>KD-Tree 和替罪羊树维护树平衡的方法一样，因此也可以提出来讲讲。</p>
 <p><s>其实重点是KD不是替罪羊</s></p>
 <h2 id="替罪羊树">替罪羊树</h2>
 <p>平衡树的插入，删除等操作基本都是一致的，重要的是如何维护树的平衡。例如给出一个不太平衡的树：</p>
@@ -343,8 +343,8 @@ inline void query(int x,int id){
     </entry>
     <entry>
         <title type="html"><![CDATA[P3830 随机树 题解]]></title>
-        <id>http://localhost:4000/post/p3830-sui-ji-shu-ti-jie/</id>
-        <link href="http://localhost:4000/post/p3830-sui-ji-shu-ti-jie/">
+        <id>https://Walker68145.github.io/post/p3830-sui-ji-shu-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/p3830-sui-ji-shu-ti-jie/">
         </link>
         <updated>2021-10-28T14:27:34.000Z</updated>
         <content type="html"><![CDATA[<p><strong>upd</strong>：一个转移的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">j,y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 打反了，已更正。此外修复了部分错别字，图床换源。</p>
@@ -459,8 +459,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[CSPS2021-1 题解]]></title>
-        <id>http://localhost:4000/post/csps2021-1-ti-jie/</id>
-        <link href="http://localhost:4000/post/csps2021-1-ti-jie/">
+        <id>https://Walker68145.github.io/post/csps2021-1-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/csps2021-1-ti-jie/">
         </link>
         <updated>2021-10-24T13:21:23.000Z</updated>
         <content type="html"><![CDATA[<h2 id="题目大意">题目大意</h2>
@@ -850,8 +850,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[多项式四则运算]]></title>
-        <id>http://localhost:4000/post/duo-xiang-shi-four-in-one/</id>
-        <link href="http://localhost:4000/post/duo-xiang-shi-four-in-one/">
+        <id>https://Walker68145.github.io/post/duo-xiang-shi-four-in-one/</id>
+        <link href="https://Walker68145.github.io/post/duo-xiang-shi-four-in-one/">
         </link>
         <updated>2021-10-19T01:41:41.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前言">前言</h2>
@@ -1460,8 +1460,8 @@ B_1\equiv 2B_2-AB_2^2\equiv 0\pmod{x^n}
     </entry>
     <entry>
         <title type="html"><![CDATA[CF643C 题解]]></title>
-        <id>http://localhost:4000/post/cf643c-ti-jie/</id>
-        <link href="http://localhost:4000/post/cf643c-ti-jie/">
+        <id>https://Walker68145.github.io/post/cf643c-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/cf643c-ti-jie/">
         </link>
         <updated>2021-10-16T06:53:34.000Z</updated>
         <content type="html"><![CDATA[<p>看见题解里面全是斜率优化，没有<strong>李超线段树</strong>，所以写一篇纪念。</p>
@@ -1637,8 +1637,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[2-SAT 入坟]]></title>
-        <id>http://localhost:4000/post/2-sat-ru-fen/</id>
-        <link href="http://localhost:4000/post/2-sat-ru-fen/">
+        <id>https://Walker68145.github.io/post/2-sat-ru-fen/</id>
+        <link href="https://Walker68145.github.io/post/2-sat-ru-fen/">
         </link>
         <updated>2021-10-04T01:16:11.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前置知识">前置知识</h2>
@@ -1917,8 +1917,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[平面图判定 题解]]></title>
-        <id>http://localhost:4000/post/ping-mian-tu-pan-ding-ti-jie/</id>
-        <link href="http://localhost:4000/post/ping-mian-tu-pan-ding-ti-jie/">
+        <id>https://Walker68145.github.io/post/ping-mian-tu-pan-ding-ti-jie/</id>
+        <link href="https://Walker68145.github.io/post/ping-mian-tu-pan-ding-ti-jie/">
         </link>
         <updated>2021-10-03T09:21:32.000Z</updated>
         <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P3209">题目传送门</a>。</p>
@@ -2087,8 +2087,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[图论入门到入土]]></title>
-        <id>http://localhost:4000/post/tu-lun-ji-lu-he-zong-jie/</id>
-        <link href="http://localhost:4000/post/tu-lun-ji-lu-he-zong-jie/">
+        <id>https://Walker68145.github.io/post/tu-lun-ji-lu-he-zong-jie/</id>
+        <link href="https://Walker68145.github.io/post/tu-lun-ji-lu-he-zong-jie/">
         </link>
         <updated>2021-09-20T10:55:35.000Z</updated>
         <content type="html"><![CDATA[<p>图论是信息学竞赛中永远不失特色的一种算法集合。最常见也是相对简单的有：最短路，最小生成树，拓扑排序，部分树上的问题。此外还有深造一些的，如网络流，Tarjan 等。</p>
@@ -2613,8 +2613,8 @@ signed main(){
     </entry>
     <entry>
         <title type="html"><![CDATA[LaTeX 入门]]></title>
-        <id>http://localhost:4000/post/latex-ru-men/</id>
-        <link href="http://localhost:4000/post/latex-ru-men/">
+        <id>https://Walker68145.github.io/post/latex-ru-men/</id>
+        <link href="https://Walker68145.github.io/post/latex-ru-men/">
         </link>
         <updated>2021-09-18T04:56:23.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前言规定">前言规定</h2>
@@ -3143,8 +3143,8 @@ $$
     </entry>
     <entry>
         <title type="html"><![CDATA[20210824 全真模考试题解与总结]]></title>
-        <id>http://localhost:4000/post/20210824-quan-zhen-mo-kao-shi-ti-jie-yu-zong-jie/</id>
-        <link href="http://localhost:4000/post/20210824-quan-zhen-mo-kao-shi-ti-jie-yu-zong-jie/">
+        <id>https://Walker68145.github.io/post/20210824-quan-zhen-mo-kao-shi-ti-jie-yu-zong-jie/</id>
+        <link href="https://Walker68145.github.io/post/20210824-quan-zhen-mo-kao-shi-ti-jie-yu-zong-jie/">
         </link>
         <updated>2021-08-29T06:08:05.000Z</updated>
         <content type="html"><![CDATA[<h2 id="总结">总结</h2>
