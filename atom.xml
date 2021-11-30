@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Walker68145.github.io</id>
     <title>Arahc&apos;s blog</title>
-    <updated>2021-11-30T11:13:39.819Z</updated>
+    <updated>2021-11-30T11:21:27.607Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Walker68145.github.io"/>
     <link rel="self" href="https://Walker68145.github.io/atom.xml"/>
@@ -105,9 +105,9 @@ for(register int i=1;i&lt;=n;++i)
 </code></pre>
 <h2 id="清单">清单</h2>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6998960"><label class="task-list-item-label" for="task-item-6998960"> 出一个毒瘤题。</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8416248"><label class="task-list-item-label" for="task-item-8416248"> 出两个毒瘤题。</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9627816"><label class="task-list-item-label" for="task-item-9627816"> 出三个毒瘤题。</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6704622"><label class="task-list-item-label" for="task-item-6704622"> 出一个毒瘤题。</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8814423"><label class="task-list-item-label" for="task-item-8814423"> 出两个毒瘤题。</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8791365"><label class="task-list-item-label" for="task-item-8791365"> 出三个毒瘤题。</label></li>
 </ul>
 <pre><code class="language-markdown">- [x] 出一个毒瘤题。
 - [ ] 出两个毒瘤题。
@@ -184,7 +184,7 @@ for(register int i=1;i&lt;=n;++i)
 <h2 id="noilinux20">NOILINUX2.0</h2>
 <p>新版 NOILINUX 非常高级，它基于 Ubuntu20.04。最主要的变化就是 IDE 变多了。对于不喜欢不习惯用 Emacs 的人来说，除了 gedit 有了更多选择。主要（最吸引人的）多了 sublime，vscode。另外的新增，比如 codeblock 之类，一般不会用到。</p>
 <p>其中 sublime 是没付钱的英文版本。vscode 是除编译插件（C++，C，Pas，Python）外没有任何其他插件（包括 code runner）的英文版本。这两个编辑器貌似都是自带括号自动补全的，如有不适自行调整。</p>
-<p>支持了 Python3，对拍方面会更加方便。前提是会这个语言~~</p>
+<p>支持了 Python3，对拍方面会更加方便。<s>前提是会这个语言</s></p>
 <p>其次就是 C++ 的兹瓷版本成功进化到了 C++14，值得注意的是 C++14 算是一个跑得比较快的版本，再加上最近这些比赛评测的时候编译选项都有 -O2，说明 CCF 正尽量不让常数问题成为一个很大的阻碍。编译的时候在编译选项里添加 <code>-std=c++14</code> 就可以用 C++14 的标准编译。<code>auto,__int128,__gcd</code> 等等功能现在都不会 CE 了！（主要是 int128，不过估计 CCF 后续也不会出什么高精度题了）。</p>
 <p>当然也有一些东西在 C++14 里用就很危险了，比如 C++14 弃掉的 <code>gets</code>，还有 C++14 停用 C++17 废除的 <code>random_shuffle</code>。</p>
 <p>平时练习可以参考的编译选项：</p>
@@ -547,7 +547,7 @@ int main(){
 		system(&quot;./mak.r&quot;);
 		system(&quot;./std.r&quot;);
 		system(&quot;./cod.r&quot;);
-		if(system(&quot;diff data.out data.ans&quot;)){
+		if(system(&quot;diff data.out data.ans -q -b&quot;)){
 			puts(&quot;WA&quot;);
 			return 0;
 		}
@@ -574,7 +574,7 @@ int main(){
         double a=clock();
 		system(&quot;./cod.r&quot;);
         double b=clock();
-		if(system(&quot;diff data.out data.ans&quot;)){
+		if(system(&quot;diff data.out data.ans -q -b&quot;)){
 			puts(&quot;WA&quot;);
 			return 0;
 		}
